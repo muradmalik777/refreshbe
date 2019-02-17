@@ -1,13 +1,17 @@
 <template>
-    <div class="portfolio">
-        <div class="full-screen bg-dark4">
-            <h1>Contact Us</h1>
-        </div>
-    </div>
+    <v-container fluid class="full-screen bg-dark4">
+        <navbar></navbar>
+        <h1>Contact Us</h1>
+    </v-container>
 </template>
 <script>
+import NavBar from '../components/NavBar';
+
 export default {
-    name: 'contact'
+    name: 'contact',
+    components: {
+        'navbar': NavBar,
+    },
     
 }
 </script>
