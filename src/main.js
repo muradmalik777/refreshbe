@@ -5,12 +5,11 @@ import router from "./router";
 import "./assets/scss/theme.scss";
 import Vuetify from 'vuetify'
 import VueParticles from 'vue-particles'
-import Transitions from 'vue2-transitions'
 
-Vue.use(Transitions)
-Vue.use(VueParticles)
+
+Vue.use(VueParticles);
 Vue.use(Vuetify);
-
+Vue.use(require('vue2-animate/dist/vue2-animate.min.css'));
 Vue.config.productionTip = false
 
 var vueInstance = new Vue({
