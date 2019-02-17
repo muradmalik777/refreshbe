@@ -1,0 +1,69 @@
+@import "variables.scss";
+@import "util.scss";
+@import "fonts.scss";
+
+*{
+  box-sizing: border-box;
+}
+body {
+  margin: 0px !important;
+  font-size: 16px;
+  line-height: 1.5rem;
+  font-family: 'HireNinja-Cabin-Regular', sans-serif;
+  padding: 0;
+
+  h1,h2,h3,h4,h5,h6,p {
+    color: $color-primary-dark;
+  }
+}
+.sbf {
+  font-family: 'HireNinja-Cabin-SemiBold', sans-serif;
+}
+.mf {
+  font-family: 'HireNinja-Cabin-Medium', sans-serif;
+}
+
+.c-purple {
+  color: #28007C;
+}
+.c-black {
+  color: #000000;
+}
+.c-dark {
+  color: #585858;
+}
+.c-medium {
+  color: #858585;
+}
+.c-light {
+  color: #C4C4C4;
+}
+.c-white {
+  color: #FFFFFF;
+}
+
+.panel{
+  margin: auto;
+}
+.panel.small{
+  width: 560px;
+}
+.panel.medium{
+  width: 960px;
+}
+.panel.custom{
+  width: 70%;
+}
+.panel.large{
+  width: 1280px
+}
+.panel.x-large{
+  width: 90%;
+}
+.panel.full{
+  width: 100%;
+}
+
+.full-screen{
+  height: 100vh;
+}
