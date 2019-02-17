@@ -1,7 +1,8 @@
 <template>
     <v-container fluid class="full-screen bg-dark2">
-        <navbar></navbar>
-        <h1>Services</h1>
+        <v-layout pa-2>
+          <navbar></navbar>
+        </v-layout>
     </v-container>
 </template>
 <script>
