@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-container fluid class="full-screen bg-dark1 section1">
+  <v-container fluid class="full-screen bg-dark1 section1" transition="scale-transition">
     <v-layout pa-2>
       <navbar></navbar>
     </v-layout>
@@ -22,7 +22,7 @@
     </v-layout>
   </v-container>
 
-  <v-container fluid class="full-screen bg-dark1 section2">
+  <v-container fluid class="full-screen bg-dark3 section2">
 
   </v-container>
 </div>
@@ -49,7 +49,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 .section1{
   

@@ -70,39 +70,40 @@ body {
   height: 100vh;
 }
 .hero{
-  font-size: 60px;
+  font-size: 100px;
   font-weight: bold;
   color: rgb(221, 145, 4);
 }
 .hero-slogan{
-
+  
 }
 
 //animated button
-.animated-btn {
-  display: inline-block;
-  line-height: 45px;
-  position: relative;
-  transform: translateZ(0px);
-  transition-duration: 0.5s;
-}
-.animated-btn::before {
-  border-bottom: 12px solid #ffffff;
-  bottom: 0;
-  content: "";
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  transform: scaleX(0);
-  transform-origin: 0 50% 0;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
-  z-index: -1;
-  padding: 15px !important;
-}
-.animated-btn:focus::before,
-.animated-btn:hover::before {
-  transform: scaleX(1);
-  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); 
-  }
+
+// .animated-btn {
+//   line-height: 45px;
+//   position: relative;
+//   transform: translateZ(0px);
+//   transition-duration: 0.5s;
+// }
+// .animated-btn::before {
+//   border-bottom: 12px solid #ffffff;
+//   border-top: 12px solid #ffffff;
+//   bottom: 0;
+//   content: "";
+//   left: 0;
+//   position: absolute;
+//   right: 0;
+//   top: 0;
+//   transform: scaleX(0);
+//   transform-origin: 0 50% 0;
+//   transition-duration: 0.5s;
+//   transition-timing-function: ease-out;
+//   z-index: -1;
+//   padding: 15px !important;
+// }
+// .animated-btn:focus::before,
+// .animated-btn:hover::before {
+//   transform: scaleX(1);
+//   transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66); 
+//   }
