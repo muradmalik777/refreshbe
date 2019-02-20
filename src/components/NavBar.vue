@@ -1,16 +1,14 @@
 <template>
     <v-container fluid>
         <v-layout pa-2 justify-space-between row>
-            <v-flex xs6>
-                <router-link to="/"><img src="../assets/imgs/logo.png" width="210px" height="130px"></router-link>
+            <v-flex xl12 lg12 md12 xs12>
+                <router-link to="/" class="f-l"><v-img :src="require('@/assets/imgs/logo.png')" width="210px" height="130px" to="/"></v-img></router-link>
             </v-flex>
-            <v-flex xs6>
-                <v-btn @click.stop="drawer = !drawer" class="f-r">
-                    <v-icon>format_align_right</v-icon>
-                </v-btn>
+            <v-flex xl12 lg12 md12 xs12>
+                <v-icon large @click.stop="drawer = !drawer" class="menu-icon f-r">dehaze</v-icon>
                  <v-navigation-drawer class="bg-dark1" v-model="drawer" :width="400" absolute dark right temporary>
-                     <v-layout justify-end>
-                         <v-btn mt-3 mr-3 @click="hideNavigation">Hide</v-btn>
+                     <v-layout justify-start pt-2>
+                         <v-icon class="m-t" large @click="hideNavigation">clear</v-icon>
                      </v-layout>
                     <v-layout pa-2 row offset-xs2>
                         <img src="../assets/imgs/logo.png" width="210px" height="130px" class="icon">
@@ -49,6 +47,7 @@ export default {
     data: function(){
         return{
             drawer: false,
+            image: "@/assets/imgs/logo.png",
         }
     },
     methods: {

@@ -8,11 +8,10 @@
       <v-flex xs6 mt-3>
         <transition
           name="bounce"
-          enter-active-class="bounceInLeft"
-          leave-active-class="bounceOutRight">
+          enter-active-class="bounceInDown">
           <div v-if="show">
-            <TextGlitch class="hero c-white uppercase m-b m-t-3" background="transparent" fill="rgb(221, 145, 4)" highlight1="black" highlight2="black" text="D&D Creations"></TextGlitch>
-            <h1 class="c-white hero-slogan">we are a digital agency that creates business websites <br> that are making the difference</h1>
+            <TextGlitch class="hero uppercase m-b m-t-3" background="transparent" fill="rgb(221, 145, 4)" highlight1="black" highlight2="black" text="D&D Creations"></TextGlitch>
+            <h1 class="c-white text-animation hero-slogan">we are a digital agency that creates business websites <br> that are making the difference</h1>
           </div>
         </transition>
       </v-flex>
@@ -51,6 +50,13 @@ export default {
 
 <style lang="scss">
 .section1{
-  
+  .hero{
+    font-size: 100px;
+    font-weight: bold;
+    color: rgb(221, 145, 4);
+  }
+  .hero-slogan{
+
+  }
 }
 </style>
