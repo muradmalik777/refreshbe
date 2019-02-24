@@ -40,10 +40,63 @@
         <h1 class="services-title t-c c-white uppercase">services</h1>
         <h3 class="services-text t-c c-white">We provide a range of services in the spectrum of Web Development ranging from design to SEO optimization.
           Click to find out all about our services.</h3>
-        <v-btn class="services-btn" to="/services">View All <v-icon left light>arrow_right</v-icon></v-btn>
+        <v-btn ripple class="services-btn" to="/services">View All <v-icon left light>arrow_right</v-icon></v-btn>
       </v-flex>
     </v-layout>
   </v-container>
+
+  <v-container fluid class="realizations" grid-list-xl>
+    <v-layout pa-4 v-bind="adjustLayout">
+      <v-flex xs12>
+        <h1 class="realizations-title t-c uppercase p-b-3">realizations</h1>
+      </v-flex>
+    </v-layout>
+
+    <v-layout pa-4 justify-center v-bind="adjustLayout">
+      <v-flex xs3>
+        <v-card :elevation="10" max-width="100%">
+          <v-img :src="require('@/assets/imgs/default.jpg')" class="portfolio-img"></v-img>
+          <v-card-title primary-title>
+            <div>
+              <h2 class="card-title m-b">Wesbite 1</h2>
+              <h3 class="card-text">Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, 
+                ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.</h3>
+            </div>
+          </v-card-title>
+        </v-card>
+      </v-flex>
+      <v-flex xs3>
+        <v-card :elevation="10" max-width="100%">
+          <v-img :src="require('@/assets/imgs/default.jpg')" class="portfolio-img"></v-img>
+          <v-card-title primary-title>
+            <div>
+              <h2 class="card-title m-b">Wesbite 1</h2>
+              <h3 class="card-text">Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, 
+                ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.</h3>
+            </div>
+          </v-card-title>
+        </v-card>
+      </v-flex>
+      <v-flex xs3>
+        <v-card :elevation="10" max-width="100%">
+          <v-img :src="require('@/assets/imgs/default.jpg')" class="portfolio-img"></v-img>
+          <v-card-title primary-title>
+            <div>
+              <h2 class="card-title m-b">Wesbite 1</h2>
+              <h3 class="card-text">Lorem ipsum dolor sit amet, brute iriure accusata ne mea. Eos suavitate referrentur ad, 
+                ea nec propriae adipisci. Ignota salutandi accusamus in sed, et per malis fuisset, qui id ludus appareat.</h3>
+            </div>
+          </v-card-title>
+        </v-card>
+      </v-flex>
+    </v-layout>
+
+    <v-layout pa-4 v-bind="adjustLayout">
+      <v-flex xs12>
+        <v-btn ripple class="relizations-btn" to="/portfolio">View More <v-icon left light>arrow_right</v-icon></v-btn>
+      </v-flex>
+    </v-layout>
+  </v-container>  
 </div>
 </template>
 
@@ -72,7 +125,9 @@ export default {
 .landing{
   height: 125vh;
   background: url("../assets/imgs/landing/landing-bg-1.png");
-  background-size: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   .hero-slogan{
     width: 50%;
     margin: auto;
@@ -98,6 +153,7 @@ export default {
   position: relative;
   height: 125vh;
   background: url("../assets/imgs/landing/landing-bg-2.png");
+  background-repeat: no-repeat;
   background-size: 100%;
 
   .services-title{
@@ -116,22 +172,47 @@ export default {
     font-size: 24px;
     width: 250px;
     height: 80px;
-    padding: 20px;
+    padding: 18px;
     border-radius: 20px;
     border: 3px solid #ffffff;
     display: block;
     margin: 80px auto;
 
     .v-icon{
-      font-size: 30px;
+      font-size: 40px;
     }
   }
   .particles{
     position: absolute;
-    top: 220px;
-    left: 0px;
-    height: 200px;
-    width: 100%;
+    top: 250px;
+    left: 7.5%;
+    bottom: 250px;
+    width: 85%;
+  }
+}
+.realizations{
+  .realizations-title{
+    font-size: 50px;
+    margin: 30px auto;
+  }
+  .relizations-btn{
+    background: transparent !important;
+    text-align: center;
+    font-size: 24px;
+    width: 250px;
+    height: 80px;
+    padding: 18px;
+    border-radius: 20px;
+    border: 3px solid #666666;
+    display: block;
+    margin: 80px auto;
+
+    .v-btn__content{
+      color: #666666;
+    }
+    .v-icon{
+      font-size: 40px;
+    }
   }
 }
 </style>
