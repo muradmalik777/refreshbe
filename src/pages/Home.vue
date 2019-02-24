@@ -96,19 +96,23 @@
         <v-btn ripple class="relizations-btn" to="/portfolio">View More <v-icon left light>arrow_right</v-icon></v-btn>
       </v-flex>
     </v-layout>
-  </v-container>  
+  </v-container>
+
+  <foot background="dark"></foot>
 </div>
 </template>
 
 <script>
 import NavBar from '../components/NavBar';
-import VueTextGlitch from 'vue-text-glitch'
+import VueTextGlitch from 'vue-text-glitch';
+import Foot from '../components/Footer';
 
 export default {
   name: 'home',
   components: {
     'navbar': NavBar,
     'TextGlitch': VueTextGlitch,
+    'foot': Foot,
   },
   data: function(){
     return{
@@ -163,7 +167,7 @@ export default {
   .services-text{
     width: 50%;
     font-size: 28px;
-    margin: 30px auto;
+    margin: 50px auto 30px;
   }
   .services-btn{
     color: #ffffff;
