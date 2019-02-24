@@ -1,23 +1,23 @@
 <template>
 <div>
-  <v-container fluid class="full-screen bg-dark1 section1" transition="scale-transition">
+  <v-container fluid class="full-screen bg-dark1 hero-section" grid-list-xl>
     <v-layout pa-2>
       <navbar></navbar>
     </v-layout>
-    <v-layout pa-5 justify-space-between row>
-      <v-flex xs6 mt-3>
-        <transition
-          name="bounce"
-          enter-active-class="bounceInDown">
-          <div v-if="show">
-            <TextGlitch class="hero uppercase m-b m-t-3" background="transparent" fill="rgb(221, 145, 4)" highlight1="black" highlight2="black" text="D&D Creations"></TextGlitch>
-            <h1 class="c-white text-animation hero-slogan">we are a digital agency that creates business websites <br> that are making the difference</h1>
-          </div>
+    <v-layout pa-2 v-bind="adjustLayout">
+      <v-flex>
+        <transition name="zoomDown">
+          <v-img v-if="show_hero" :src="require('@/assets/imgs/logo.png')" class="hero-logo"></v-img>
+        </transition>
+        <transition name="bounce" enter-active-class="bounceInLeft">
+          <h1 v-if="show_hero" class="c-white text-animation hero-slogan">we are a digital agency that creates business websites that are making the difference</h1>
         </transition>
       </v-flex>
-      <v-flex xs5>
-        <vue-particles color="#ffffff"></vue-particles>
-      </v-flex>
+      <!-- <v-flex>
+        <div class="particles">
+          <vue-particles color="#666" hoverMode="grab" :lineOpacity="0.2" :hoverEffect="true" :clickEffect="false"></vue-particles>
+        </div>
+      </v-flex> -->
     </v-layout>
   </v-container>
 
@@ -39,24 +39,33 @@ export default {
   },
   data: function(){
     return{
-      show: false
+      show_hero: false,
     }
   },
   mounted: function(){
-    this.show = true
+    this.show_hero = true
+  },
+  computed: {
+    adjustLayout () {
+      const adjustLayout = {}
+      if (this.$vuetify.breakpoint.mdAndUp) {
+        adjustLayout.row = true
+      } else{
+        adjustLayout.column = true
+      }
+      return adjustLayout
+    }
   }
 }
 </script>
 
-<style lang="scss">
-.section1{
-  .hero{
-    font-size: 100px;
-    font-weight: bold;
-    color: rgb(221, 145, 4);
-  }
+<style lang="scss" scoped>
+.hero-section{
+  background: url("../assets/imgs/landing/landing-bg-1.png");
   .hero-slogan{
-
+    width: 50%;
+    margin: auto;
+    text-align: center;
   }
 }
 </style>

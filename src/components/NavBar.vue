@@ -1,38 +1,38 @@
 <template>
     <v-container fluid>
         <v-layout pa-2 justify-space-between row>
-            <v-flex xl12 lg12 md12 xs12>
-                <router-link to="/" class="f-l"><v-img :src="require('@/assets/imgs/logo.png')" width="210px" height="130px" to="/"></v-img></router-link>
+            <v-flex>
+                <router-link to="/" class="f-l"><v-img :src="require('@/assets/imgs/logo.png')" to="/" class="logo"></v-img></router-link>
             </v-flex>
-            <v-flex xl12 lg12 md12 xs12>
-                <v-icon large @click.stop="drawer = !drawer" class="menu-icon f-r">dehaze</v-icon>
+            <v-flex>
+                <v-btn icon flat @click.stop="drawer = !drawer" class="menu-icon pointer f-r"><v-icon large>dehaze</v-icon></v-btn>
                  <v-navigation-drawer class="bg-dark1" v-model="drawer" :width="400" absolute dark right temporary>
                      <v-layout justify-start pt-2>
                          <v-icon class="m-t" large @click="hideNavigation">clear</v-icon>
                      </v-layout>
                     <v-layout pa-2 row offset-xs2>
-                        <img src="../assets/imgs/logo.png" width="210px" height="130px" class="icon">
+                        <img src="../assets/imgs/logo.png" class="icon">
                     </v-layout>
                     <v-layout pa-2 align-center justify-center column>
                         <v-flex justify-center xs2>
                             <div class="text-xs-center link-box animated-btn">
-                                <v-btn flat depressed to="/">Home <v-icon medium>home</v-icon></v-btn>
+                                <v-btn flat depressed to="/">Home</v-btn>
                             </div>
                         </v-flex>
                         <v-flex xs2>
                             <div class="text-xs-center link-box">
-                            <v-btn flat to="/contact">Contact <v-icon medium>contact_support</v-icon></v-btn>
+                            <v-btn flat to="/contact">Contact</v-btn>
                             </div>
                         </v-flex>
                         <v-flex xs2>
                             <div class="text-xs-center link-box">
                                 
-                            <v-btn flat to="/portfolio">Portfolio <v-icon medium>verified_user</v-icon></v-btn>
+                            <v-btn flat to="/portfolio">Portfolio</v-btn>
                             </div>
                         </v-flex>
                         <v-flex xs2>
                             <div class="text-xs-center link-box">
-                                <v-btn flat to="/services">Services <v-icon medium>cloud_done</v-icon></v-btn>
+                                <v-btn flat to="/services">Services</v-btn>
                             </div>
                         </v-flex>
                     </v-layout>
@@ -81,9 +81,7 @@ export default {
         display: none;
     }
 }
-.v-icon{
+.menu-icon{
     color: #ffffff;
-    margin-left: 10px;
-    margin-bottom: 7px
 }
 </style>
