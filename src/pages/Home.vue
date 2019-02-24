@@ -1,6 +1,6 @@
 <template>
 <div>
-  <v-container fluid class="full-screen bg-dark1 hero-section" grid-list-xl>
+  <v-container fluid class="section1" grid-list-xl>
     <v-layout pa-2>
       <navbar></navbar>
     </v-layout>
@@ -21,8 +21,19 @@
     </v-layout>
   </v-container>
 
-  <v-container fluid class="full-screen bg-dark3 section2">
-
+  <v-container fluid class="section2" grid-list-xl>
+    <v-layout pa-4 justify-center v-bind="adjustLayout">
+      <v-flex xs4>
+        <h2 class="t-r origin">
+          We have been around since 1997, but don't let our depth of experience make you feel we are old school.
+          We are constantly evolving, moving and growing just as technology does and our clients need change.
+        </h2>
+        <h1 class="uppercase t-r">Inception</h1>
+      </v-flex>
+      <v-flex xs4>
+        <v-img :src="require('@/assets/imgs/landing/quotation.png')" class="quotation"></v-img>
+      </v-flex>
+    </v-layout>
   </v-container>
 </div>
 </template>
@@ -45,27 +56,31 @@ export default {
   mounted: function(){
     this.show_hero = true
   },
-  computed: {
-    adjustLayout () {
-      const adjustLayout = {}
-      if (this.$vuetify.breakpoint.mdAndUp) {
-        adjustLayout.row = true
-      } else{
-        adjustLayout.column = true
-      }
-      return adjustLayout
-    }
-  }
 }
 </script>
 
 <style lang="scss" scoped>
-.hero-section{
+.section1{
+  height: 126vh;
   background: url("../assets/imgs/landing/landing-bg-1.png");
+  background-size: cover;
+  background-origin: border-box;
+  background-repeat: no-repeat;
   .hero-slogan{
     width: 50%;
     margin: auto;
     text-align: center;
+  }
+}
+.section2{
+  .origin{
+    margin: 120px auto;
+  }
+  .quotation{
+    width: 400px;
+    height: 350px;
+    display: block;
+    margin: 120px auto;
   }
 }
 </style>

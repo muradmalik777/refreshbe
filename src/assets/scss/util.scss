@@ -15,10 +15,9 @@
 .bg-dark5{
   background: #151B3F;
 }
-
-
 h1,h2,h3,h4,h5,h6,p {
-  margin: 0px;   
+  padding: 0px;
+  margin: 0px;
   font-weight: normal;
   font-style: normal;
   line-height: normal;
@@ -174,30 +173,10 @@ h1,h2,h3,h4,h5,h6,p {
   border-left: 1px solid #eee;
 }
 
-.uppercase {
-  text-transform: uppercase;
-}
-
-.full-width {
-  width: 100%;
-}
-.full-height {
-  height: 100%;
-}
-
-
-.pointer {
-  cursor: pointer;
-}
-
 .flex-container{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-content: space-between;
-}
-img.icon{
-  display: block !important;
-  margin: 2rem auto !important;
 }
