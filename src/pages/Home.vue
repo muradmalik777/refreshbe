@@ -154,7 +154,7 @@ export default {
   height: 125vh;
   background: url("../assets/imgs/landing/landing-bg-2.png");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 
   .services-title{
     font-size: 50px;
@@ -168,12 +168,11 @@ export default {
   .services-btn{
     color: #ffffff;
     background: transparent !important;
-    text-align: center;
     font-size: 24px;
     width: 250px;
     height: 80px;
     padding: 18px;
-    border-radius: 20px;
+    border-radius: 50px;
     border: 3px solid #ffffff;
     display: block;
     margin: 80px auto;
@@ -188,6 +187,7 @@ export default {
     left: 7.5%;
     bottom: 250px;
     width: 85%;
+    height: 100%;
   }
 }
 .realizations{
@@ -195,20 +195,22 @@ export default {
     font-size: 50px;
     margin: 30px auto;
   }
+  .v-card{
+    border: 3px solid #dddddd;
+  }
   .relizations-btn{
     background: transparent !important;
-    text-align: center;
     font-size: 24px;
     width: 250px;
     height: 80px;
     padding: 18px;
-    border-radius: 20px;
+    border-radius: 50px;
     border: 3px solid #666666;
     display: block;
     margin: 80px auto;
 
     .v-btn__content{
-      color: #666666;
+      color: #666666 !important;
     }
     .v-icon{
       font-size: 40px;
