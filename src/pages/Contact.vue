@@ -3,10 +3,10 @@
         <v-container fluid class="main" grid-list-lg>
             <!-- <img src="@/assets/imgs/contact/contact-bg.png" class="background"> -->
             <v-layout pa-2>
-              <navbar :showLogo="true"></navbar>
+              <navbar :showLogo="false"></navbar>
             </v-layout>
 
-            <v-layout align-center justify-space-around row fill-height>
+            <v-layout align-center justify-center row fill-height>
                 <v-flex xs12 sm12 md4 lg4 align-self: center>
                     <transition name="zoomDown">
                         <img v-if="show_hero" src="@/assets/imgs/logo.png" class="dd-logo">
@@ -15,26 +15,26 @@
             </v-layout>
 
             <v-layout align-center justify-space-around v-bind="adjustLayout" fill-height>
-                <v-flex xs4 align-self: center class="contact-container">
+                <v-flex xs3 align-self: center class="contact-container">
                     <transition name="bounce" enter-active-class="bounceInLeft">
                         <div v-if="show_hero">
-                            <img src="@/assets/imgs/contact/contact-ph.png" class="image">
+                            <img src="@/assets/imgs/contact/contact-loc.png" class="image">
                             <h2 class="c-white t-c">Duinparklaan 41, B670 Oostduinkerke</h2>
                         </div>
                     </transition>
                 </v-flex>
-                <v-flex xs4 align-self: center class="contact-container">
+                <v-flex xs3 align-self: center class="contact-container">
                     <transition name="bounce" enter-active-class="bounceInLeft">
                         <div v-if="show_hero">
-                            <img src="@/assets/imgs/contact/contact-mail.png" class="image">
+                            <img src="@/assets/imgs/contact/contact-ph.png" class="image">
                             <h2 class="c-white t-c">+32 475 529 103</h2>
                         </div>
                     </transition>
                 </v-flex>
-                <v-flex xs4 align-self: center class="contact-container">
+                <v-flex xs3 align-self: center class="contact-container">
                     <transition name="bounce" enter-active-class="bounceInRight">
                         <div v-if="show_hero">
-                            <img src="@/assets/imgs/contact/contact-loc.png" class="image">
+                            <img src="@/assets/imgs/contact/contact-mail.png" class="image">
                             <h2 class="c-white t-c">info@ddcreation.be</h2>
                         </div>
                     </transition>
