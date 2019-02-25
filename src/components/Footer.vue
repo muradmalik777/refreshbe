@@ -40,8 +40,8 @@ export default {
 .foot{
     padding-top: 330px;
     .footer-icon{
-        max-width: 70px;
-        max-height: 70px;
+        max-width: 60px;
+        max-height: 60px;
         cursor: pointer;
     }
 }

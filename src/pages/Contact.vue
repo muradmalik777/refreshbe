@@ -1,7 +1,7 @@
 <template>
     <v-container fluid class="full-screen bg-dark4">
         <v-layout pa-2>
-          <navbar></navbar>
+          <navbar :showLogo="true"></navbar>
         </v-layout>
     </v-container>
 </template>

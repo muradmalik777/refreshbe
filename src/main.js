@@ -6,8 +6,10 @@ import "./mixins/Global";
 import "./assets/scss/theme.scss";
 import Vuetify from 'vuetify'
 import VueParticles from 'vue-particles'
+import checkView from 'vue-check-view'
 
 
+Vue.use(checkView)
 Vue.use(VueParticles);
 Vue.use(Vuetify);
 Vue.use(require('vue2-animate/dist/vue2-animate.min.css'));
