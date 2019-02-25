@@ -1,12 +1,11 @@
 <template>
     <div>
         <v-container fluid class="main" grid-list-lg>
-            <!-- <img src="@/assets/imgs/contact/contact-bg.png" class="background"> -->
             <v-layout pa-2>
               <navbar :showLogo="false"></navbar>
             </v-layout>
 
-            <v-layout align-center justify-center row fill-height>
+            <v-layout justify-center row>
                 <v-flex xs12 sm12 md4 lg4 align-self: center>
                     <transition name="zoomDown">
                         <router-link to="/"><v-img v-if="show_hero" :src="require('../assets/imgs/logo.png')" class="hero-logo pointer"></v-img></router-link>
@@ -14,8 +13,8 @@
                 </v-flex>
             </v-layout>
 
-            <v-layout align-center justify-space-around v-bind="adjustLayout" fill-height>
-                <v-flex xs3 align-self: center class="contact-container">
+            <v-layout justify-center v-bind="adjustLayout" >
+                <v-flex xs3>
                     <transition name="bounce" enter-active-class="bounceInLeft">
                         <div v-if="show_hero">
                             <img src="@/assets/imgs/contact/contact-loc.png" class="image">
@@ -23,7 +22,7 @@
                         </div>
                     </transition>
                 </v-flex>
-                <v-flex xs3 align-self: center class="contact-container">
+                <v-flex xs3>
                     <transition name="bounce" enter-active-class="bounceInLeft">
                         <div v-if="show_hero">
                             <img src="@/assets/imgs/contact/contact-ph.png" class="image">
@@ -31,7 +30,7 @@
                         </div>
                     </transition>
                 </v-flex>
-                <v-flex xs3 align-self: center class="contact-container">
+                <v-flex xs3>
                     <transition name="bounce" enter-active-class="bounceInRight">
                         <div v-if="show_hero">
                             <img src="@/assets/imgs/contact/contact-mail.png" class="image">
@@ -40,12 +39,6 @@
                     </transition>
                 </v-flex>
             </v-layout>
-
-            <!-- <v-layout align-end justify-center row fill-height class="footer">
-                    <img src="@/assets/imgs/contact/fb-grad.png" class="icon">
-                    <img src="@/assets/imgs/contact/in-grad.png" class="icon">
-                    <img src="@/assets/imgs/contact/twitter-grad.png" class="icon">
-            </v-layout> -->
         </v-container>
         <foot background="light"></foot>
     </div>
@@ -73,12 +66,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .main {
-    // .background {
-    //     z-index: 0;
-    //     position: absolute;
-    //     top: 0px;
-    //     left: -25px;
-    // }
     min-height: 1285px;
     background: url("../assets/imgs/contact/contact-bg.png");
     background-size: cover;
@@ -86,12 +73,6 @@ export default {
     background-repeat: no-repeat;
     background-size: calc(100% + 20px) 90%;
     background-position: -20px -20px;
-    .dd-logo {
-        max-width: 250px;
-        height: auto;
-        margin: auto;
-        display: block;
-    }
     .footer {
         height: 300px;
         .icon {
@@ -100,23 +81,40 @@ export default {
             margin: 10px;
         }
     }
-    .contact-container {
-        max-width: 300px;
-        height: 300px;
-        .image {
-            max-width: 100px;
-            height: auto;
-            margin: 75px auto;
-            display: block;
-        }
+    .image {
+        max-width: 100px;
+        height: auto;
+        margin: 75px auto;
+        display: block;
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 425px) {
     .main {
-        min-height: 1985px;
-        background-size: calc(230% + 20px) 90%;
-        background-position: -610px -20px;
+        .hero-logo {
+            max-width: 200px;
+            height: auto;
+        }
+        .footer {
+            height: 200px;
+            .icon {
+                width: 25px;
+                height: auto;
+                margin: 10px;
+            }
+        }
+        .image {
+            max-width: 60px;
+            height: auto;
+            margin: 30px auto;
+            display: block;
+        }
+        h2{
+            font-size: 16px;
+            width: 70%;
+            display: block;
+            margin: auto;
+        }
     }
 }
 </style>
