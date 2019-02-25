@@ -7,8 +7,8 @@
     </v-layout>
     <v-layout pa-2 v-bind="adjustLayout">
       <v-flex>
-        <transition name="zoomDown">
-          <v-img to="/" v-if="show_hero" :src="require('@/assets/imgs/logo.png')" class="hero-logo"></v-img>
+        <transition name="bounce" enter-active-class="bounceInDown">
+          <v-img v-if="show_hero" :src="require('@/assets/imgs/logo.png')" class="hero-logo pointer"></v-img>
         </transition>
         <transition name="bounce" enter-active-class="bounceInLeft">
           <h1 v-if="show_hero" class="c-white text-animation hero-slogan">we are a digital agency that creates business websites that are making the difference</h1>
@@ -142,7 +142,7 @@ export default {
       show_hero: false,
       show_origin: false,
       show_services: false,
-      show_realizations: false
+      show_realizations: false,
     }
   },
   created: function(){
@@ -231,10 +231,13 @@ export default {
 
 <style lang="scss" scoped>
 .landing{
-  height: 125vh;
   background: url("../assets/imgs/landing/landing-bg-1.png");
+  min-height: 1285px;
   background-size: cover;
+  background-origin: border-box;
   background-repeat: no-repeat;
+  background-size: calc(100% + 20px) 90%;
+  background-position: -20px -20px;
 
   .hero-slogan{
     width: 50%;
@@ -252,18 +255,21 @@ export default {
     font-size: 28px;
   }
   .quotation{
-    width: 400px;
-    height: 350px;
+    max-width: 400px;
+    height: auto;
     display: block;
     margin: 100px auto;
   }
 }
 .services{
   position: relative;
-  height: 125vh;
   background: url("../assets/imgs/landing/landing-bg-2.png");
-  background-repeat: no-repeat;
+  height: 1285px;
   background-size: cover;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-size: calc(100% + 20px) 90%;
+  background-position: -20px -20px;
 
   .services-title{
     font-size: 50px;
@@ -296,7 +302,6 @@ export default {
     left: 7.5%;
     bottom: 250px;
     width: 85%;
-    height: 100%;
   }
 }
 .realizations{
@@ -324,6 +329,110 @@ export default {
     }
     .v-icon{
       font-size: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .landing{
+    max-height: 700px;
+    .hero-logo{
+      max-width: 200px;
+      height: 150px auto;
+    }
+    .hero-slogan{
+      width: 90%;
+      font-size: 20px;
+    }
+  }
+  .origin{
+    height: 600px;
+    .origin-title{
+      font-size: 28px;
+      text-align: center !important;
+    }
+    .origin-text{
+      margin: 30px auto;
+      font-size: 16px;
+      text-align: center !important
+    }
+    .quotation{
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 30px auto;
+    }
+  }
+  .services{
+    position: relative;
+    max-height: 700px;
+
+    .services-title{
+      font-size: 28px;
+      margin: 100px auto 50px;
+    }
+    .services-text{
+      width: 90%;
+      font-size: 18px;
+      margin: 30px auto;
+    }
+    .services-btn{
+      color: #ffffff;
+      background: transparent !important;
+      font-size: 18px;
+      width: 165px;
+      height: 56px;
+      padding: 10px;
+      border-radius: 50px;
+      border: 3px solid #ffffff;
+      display: block;
+      margin: 30px auto;
+
+      .v-icon{
+        font-size: 30px;
+      }
+    }
+    .particles{
+      position: absolute;
+      top: 200;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  } 
+  .realizations{
+    height: auto;
+
+    .realizations-title{
+      font-size: 28px;
+      margin: 30px auto;
+    }
+    .v-card{
+      border: 3px solid #dddddd;
+      .card-title{
+        font-size: 22px;
+      }
+      .card-text{
+        font-size: 16px;
+      }
+    }
+    .relizations-btn{
+      background: transparent !important;
+      font-size: 18px;
+      width: 165px;
+      height: 56px;
+      padding: 10px;
+      border-radius: 50px;
+      border: 3px solid #666666;
+      display: block;
+      margin: 30px auto;
+
+      .v-btn__content{
+        color: #666666 !important;
+      }
+      .v-icon{
+        font-size: 30px;
+      }
     }
   }
 }
