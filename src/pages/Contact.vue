@@ -3,7 +3,7 @@
         <v-container fluid class="main" grid-list-lg>
             <!-- <img src="@/assets/imgs/contact/contact-bg.png" class="background"> -->
             <v-layout pa-2>
-                <navbar></navbar>
+              <navbar :showLogo="true"></navbar>
             </v-layout>
 
             <v-layout align-center justify-space-around row fill-height>

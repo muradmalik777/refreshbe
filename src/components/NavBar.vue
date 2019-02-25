@@ -2,7 +2,7 @@
     <v-container fluid>
         <v-layout pa-2 justify-space-between row>
             <v-flex>
-                <router-link to="/" class="f-l"><v-img :src="require('@/assets/imgs/logo.png')" to="/" class="logo"></v-img></router-link>
+                <router-link v-if="this.$props.showLogo" to="/" class="f-l"><v-img :src="require('@/assets/imgs/logo.png')" to="/" class="logo"></v-img></router-link>
             </v-flex>
             <v-flex>
                 <v-btn flat @click.stop="drawer = !drawer" class="pointer f-r"><v-img :src="require('@/assets/imgs/burger.png')" class="menu-btn"></v-img></v-btn>
@@ -44,10 +44,10 @@
 <script>
 export default {
     name: 'navbar',
+    props: ['showLogo'],
     data: function(){
         return{
             drawer: false,
-            image: "@/assets/imgs/logo.png",
         }
     },
     methods: {
