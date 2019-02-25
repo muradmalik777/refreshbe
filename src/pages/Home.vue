@@ -142,7 +142,7 @@ export default {
       show_hero: false,
       show_origin: false,
       show_services: false,
-      show_realizations: false
+      show_realizations: false,
     }
   },
   created: function(){
@@ -253,6 +253,7 @@ export default {
   }
   .quotation{
     max-width: 400px;
+    height: auto;
     display: block;
     margin: 100px auto;
   }
@@ -323,6 +324,109 @@ export default {
     }
     .v-icon{
       font-size: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .landing{
+    height: 700px;
+    .hero-logo{
+      max-width: 200px;
+      height: auto;
+    }
+    .hero-slogan{
+      width: 90%;
+      font-size: 20px;
+    }
+  }
+  .origin{
+    height: 600px;
+    .origin-title{
+      font-size: 28px;
+      text-align: center !important;
+    }
+    .origin-text{
+      margin: 30px auto;
+      font-size: 16px;
+      text-align: center !important
+    }
+    .quotation{
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 30px auto;
+    }
+  }
+  .services{
+    position: relative;
+    height: 600px;
+
+    .services-title{
+      font-size: 28px;
+      margin: 100px auto 50px;
+    }
+    .services-text{
+      width: 90%;
+      font-size: 18px;
+      margin: 30px auto;
+    }
+    .services-btn{
+      color: #ffffff;
+      background: transparent !important;
+      font-size: 18px;
+      width: 165px;
+      height: 56px;
+      padding: 10px;
+      border-radius: 50px;
+      border: 3px solid #ffffff;
+      display: block;
+      margin: 30px auto;
+
+      .v-icon{
+        font-size: 30px;
+      }
+    }
+    .particles{
+      position: absolute;
+      top: 200;
+      left: 0;
+      width: 100%;
+    }
+  } 
+  .realizations{
+    height: auto;
+
+    .realizations-title{
+      font-size: 28px;
+      margin: 30px auto;
+    }
+    .v-card{
+      border: 3px solid #dddddd;
+      .card-title{
+        font-size: 22px;
+      }
+      .card-text{
+        font-size: 16px;
+      }
+    }
+    .relizations-btn{
+      background: transparent !important;
+      font-size: 18px;
+      width: 165px;
+      height: 56px;
+      padding: 10px;
+      border-radius: 50px;
+      border: 3px solid #666666;
+      display: block;
+      margin: 30px auto;
+
+      .v-btn__content{
+        color: #666666 !important;
+      }
+      .v-icon{
+        font-size: 30px;
+      }
     }
   }
 }
