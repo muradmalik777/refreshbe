@@ -48,7 +48,6 @@ export default {
 .dark{
     background: url('../assets/imgs/landing/footer-bg.png');
     background-size: cover;
-    background-origin: border-box;
     background-repeat: no-repeat;
     height: 450px;
 }

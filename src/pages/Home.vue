@@ -7,8 +7,8 @@
     </v-layout>
     <v-layout pa-2 v-bind="adjustLayout">
       <v-flex>
-        <transition name="zoomDown">
-          <v-img to="/" v-if="show_hero" :src="require('@/assets/imgs/logo.png')" class="hero-logo"></v-img>
+        <transition name="bounce" enter-active-class="bounceInDown">
+          <v-img v-if="show_hero" :src="require('@/assets/imgs/logo.png')" class="hero-logo pointer"></v-img>
         </transition>
         <transition name="bounce" enter-active-class="bounceInLeft">
           <h1 v-if="show_hero" class="c-white text-animation hero-slogan">we are a digital agency that creates business websites that are making the difference</h1>
@@ -252,8 +252,7 @@ export default {
     font-size: 28px;
   }
   .quotation{
-    width: 400px;
-    height: 350px;
+    max-width: 400px;
     display: block;
     margin: 100px auto;
   }

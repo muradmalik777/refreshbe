@@ -2,7 +2,7 @@
     <v-container fluid>
         <v-layout pa-2 justify-space-between row>
             <v-flex>
-                <router-link v-if="this.$props.showLogo" to="/" class="f-l"><v-img :src="require('@/assets/imgs/logo.png')" to="/" class="logo"></v-img></router-link>
+                <router-link v-if="this.$props.showLogo" to="/" class="f-l"><v-img :src="require('@/assets/imgs/logo.png')" class="logo"></v-img></router-link>
             </v-flex>
             <v-flex>
                 <v-btn flat @click.stop="drawer = !drawer" class="pointer f-r"><v-img :src="require('@/assets/imgs/burger.png')" class="menu-btn"></v-img></v-btn>

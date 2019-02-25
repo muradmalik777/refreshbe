@@ -9,7 +9,7 @@
             <v-layout align-center justify-center row fill-height>
                 <v-flex xs12 sm12 md4 lg4 align-self: center>
                     <transition name="zoomDown">
-                        <img v-if="show_hero" src="@/assets/imgs/logo.png" class="dd-logo">
+                        <router-link to="/"><v-img v-if="show_hero" :src="require('../assets/imgs/logo.png')" class="hero-logo pointer"></v-img></router-link>
                     </transition>
                 </v-flex>
             </v-layout>
