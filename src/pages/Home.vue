@@ -231,10 +231,13 @@ export default {
 
 <style lang="scss" scoped>
 .landing{
-  height: 125vh;
   background: url("../assets/imgs/landing/landing-bg-1.png");
+  min-height: 1285px;
   background-size: cover;
+  background-origin: border-box;
   background-repeat: no-repeat;
+  background-size: calc(100% + 20px) 90%;
+  background-position: -20px -20px;
 
   .hero-slogan{
     width: 50%;
@@ -260,10 +263,13 @@ export default {
 }
 .services{
   position: relative;
-  height: 125vh;
   background: url("../assets/imgs/landing/landing-bg-2.png");
-  background-repeat: no-repeat;
+  height: 1285px;
   background-size: cover;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-size: calc(100% + 20px) 90%;
+  background-position: -20px -20px;
 
   .services-title{
     font-size: 50px;
@@ -296,7 +302,6 @@ export default {
     left: 7.5%;
     bottom: 250px;
     width: 85%;
-    height: 100%;
   }
 }
 .realizations{
@@ -330,10 +335,10 @@ export default {
 
 @media only screen and (max-width: 425px) {
   .landing{
-    height: 700px;
+    max-height: 700px;
     .hero-logo{
       max-width: 200px;
-      height: auto;
+      height: 150px auto;
     }
     .hero-slogan{
       width: 90%;
@@ -360,7 +365,7 @@ export default {
   }
   .services{
     position: relative;
-    height: 600px;
+    max-height: 700px;
 
     .services-title{
       font-size: 28px;
@@ -392,6 +397,7 @@ export default {
       top: 200;
       left: 0;
       width: 100%;
+      height: 100%;
     }
   } 
   .realizations{
