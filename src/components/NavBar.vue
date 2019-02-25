@@ -6,8 +6,8 @@
             </v-flex>
             <v-flex>
                 <v-btn flat @click.stop="drawer = !drawer" class="pointer f-r"><v-img :src="require('@/assets/imgs/burger.png')" class="menu-btn"></v-img></v-btn>
-                <transition name="bounce" enter-active-class="bounceInRight" leave-active-class="bounceOutRight">
-                    <v-navigation-drawer v-if="drawer" :width="325" class="bg-dark1" v-model="drawer" absolute dark right temporary>
+                <transition name="slideRight">
+                    <v-navigation-drawer v-if="drawer" style="animation-duration: 0.35s" :width="325" class="bg-dark1" v-model="drawer" absolute dark right temporary>
                         <v-layout justify-start pt-2>
                             <v-icon class="m-t-2 m-l-2" large @click="hideNavigation">clear</v-icon>
                         </v-layout>
