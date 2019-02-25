@@ -2,6 +2,7 @@ import Vue from 'vue'
 import './plugins/vuetify'
 import App from './App.vue'
 import router from "./router";
+import "./mixins/Global";
 import "./assets/scss/theme.scss";
 import Vuetify from 'vuetify'
 import VueParticles from 'vue-particles'

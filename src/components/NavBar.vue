@@ -5,10 +5,10 @@
                 <router-link to="/" class="f-l"><v-img :src="require('@/assets/imgs/logo.png')" to="/" class="logo"></v-img></router-link>
             </v-flex>
             <v-flex>
-                <v-btn icon flat @click.stop="drawer = !drawer" class="menu-icon pointer f-r"><v-icon large>dehaze</v-icon></v-btn>
+                <v-btn flat @click.stop="drawer = !drawer" class="pointer f-r"><v-img :src="require('@/assets/imgs/burger.png')" class="menu-btn"></v-img></v-btn>
                  <v-navigation-drawer class="bg-dark1" v-model="drawer" :width="400" absolute dark right temporary>
                      <v-layout justify-start pt-2>
-                         <v-icon class="m-t" large @click="hideNavigation">clear</v-icon>
+                         <v-icon class="m-t-2 m-l-2" large @click="hideNavigation">clear</v-icon>
                      </v-layout>
                     <v-layout pa-2 row offset-xs2>
                         <img src="../assets/imgs/logo.png" class="icon">
@@ -81,7 +81,7 @@ export default {
         display: none;
     }
 }
-.menu-icon{
-    color: #ffffff;
+.menu-btn{
+    max-width: 50px;
 }
 </style>
