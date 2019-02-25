@@ -8,22 +8,36 @@
 
             <v-layout align-center justify-space-around row fill-height>
                 <v-flex xs12 sm12 md4 lg4 align-self: center>
-                    <img src="@/assets/imgs/logo.png" class="dd-logo">
+                    <transition name="zoomDown">
+                        <img v-if="show_hero" src="@/assets/imgs/logo.png" class="dd-logo">
+                    </transition>
                 </v-flex>
             </v-layout>
 
             <v-layout align-center justify-space-around v-bind="adjustLayout" fill-height>
                 <v-flex xs4 align-self: center class="contact-container">
-                    <img src="@/assets/imgs/contact/contact-ph.png" class="image">
-                    <h2 class="c-white t-c">Duinparklaan 41, B670 Oostduinkerke</h2>
+                    <transition name="bounce" enter-active-class="bounceInLeft">
+                        <div v-if="show_hero">
+                            <img src="@/assets/imgs/contact/contact-ph.png" class="image">
+                            <h2 class="c-white t-c">Duinparklaan 41, B670 Oostduinkerke</h2>
+                        </div>
+                    </transition>
                 </v-flex>
                 <v-flex xs4 align-self: center class="contact-container">
-                    <img src="@/assets/imgs/contact/contact-mail.png" class="image">
-                    <h2 class="c-white t-c">+32 475 529 103</h2>
+                    <transition name="bounce" enter-active-class="bounceInLeft">
+                        <div v-if="show_hero">
+                            <img src="@/assets/imgs/contact/contact-mail.png" class="image">
+                            <h2 class="c-white t-c">+32 475 529 103</h2>
+                        </div>
+                    </transition>
                 </v-flex>
                 <v-flex xs4 align-self: center class="contact-container">
-                    <img src="@/assets/imgs/contact/contact-loc.png" class="image">
-                    <h2 class="c-white t-c">info@ddcreation.be</h2>
+                    <transition name="bounce" enter-active-class="bounceInRight">
+                        <div v-if="show_hero">
+                            <img src="@/assets/imgs/contact/contact-loc.png" class="image">
+                            <h2 class="c-white t-c">info@ddcreation.be</h2>
+                        </div>
+                    </transition>
                 </v-flex>
             </v-layout>
 
@@ -101,9 +115,8 @@ export default {
 @media (max-width: 1000px) {
     .main {
         min-height: 1985px;
-        .dd-logo {
-            // max-width: 150px;
-        }
+        background-size: calc(230% + 20px) 90%;
+        background-position: -610px -20px;
     }
 }
 </style>
