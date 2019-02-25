@@ -30,8 +30,6 @@ export default {
     mounted: function(){
         if(this.$props.background === 'dark'){
             this.dark = true
-        } else{
-            this.light = true
         }
     }
 }
@@ -43,6 +41,8 @@ export default {
         max-width: 50px;
         max-height: 50px;
         cursor: pointer;
+        display: block;
+        margin: auto;
     }
 }
 .dark{
