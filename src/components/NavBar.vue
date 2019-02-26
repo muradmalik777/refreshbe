@@ -2,10 +2,16 @@
     <v-container fluid>
         <v-layout pa-2 justify-space-between row>
             <v-flex>
-                <router-link to="/" class="f-l"><v-img :src="require('@/assets/imgs/logo.png')" to="/" class="logo"></v-img></router-link>
+                <router-link to="/" class="f-l">
+                    <v-img v-if="light" :src="require('@/assets/imgs/logo.png')" to="/" class="logo"></v-img>
+                    <v-img v-else :src="require('@/assets/imgs/logo-dark.png')" to="/" class="logo"></v-img>
+                </router-link>
             </v-flex>
             <v-flex>
-                <v-btn flat @click.stop="drawer = !drawer" class="pointer f-r"><v-img :src="require('@/assets/imgs/burger.png')" class="menu-btn"></v-img></v-btn>
+                <v-btn flat @click.stop="drawer = !drawer" class="pointer f-r">
+                    <v-img v-if="light" :src="require('@/assets/imgs/burger.png')" class="menu-btn"></v-img>
+                    <v-img v-else :src="require('@/assets/imgs/burger-dark.png')" class="menu-btn"></v-img>
+                </v-btn>
                  <v-navigation-drawer class="bg-dark1" v-model="drawer" :width="400" absolute dark right temporary>
                      <v-layout justify-start pt-2>
                          <v-icon class="m-t-2 m-l-2" large @click="hideNavigation">clear</v-icon>
@@ -44,15 +50,24 @@
 <script>
 export default {
     name: 'navbar',
+    props:['color'],
     data: function(){
         return{
             drawer: false,
             image: "@/assets/imgs/logo.png",
+            light: true
         }
     },
     methods: {
         hideNavigation: function(){
             this.drawer = !this.drawer
+        }
+    },
+    mounted: function(){
+        if(this.$props.color === 'light'){
+            this.light = true
+        } else{
+            this.light = false
         }
     }
 }

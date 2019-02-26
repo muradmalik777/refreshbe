@@ -2,7 +2,7 @@
 <div>
   <v-container fluid class="landing" grid-list-xl>
     <v-layout pa-2>
-      <navbar></navbar>
+      <navbar color="light"></navbar>
     </v-layout>
     <v-layout pa-2 v-bind="adjustLayout">
       <v-flex>
