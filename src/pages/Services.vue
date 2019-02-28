@@ -2,36 +2,44 @@
     <div>
         <v-container fluid class="full-screen">
             <v-layout pa-2>
-                <navbar color="dark"></navbar>
+                <!-- <navbar color="dark"></navbar> -->
             </v-layout>
 
             <v-layout pa-2 align-center justify-center row fill-height>
 
                 <div class="services-overview">
-                    <v-layout pa-2 align-center justify-center row fill-height>
+                    <v-layout pa-2 align-center justify-center row fill-height class="services-overview-flex">
                         <div class="focus">
-                            <img src="@/assets/imgs/services/full-circle.png">
                             <div class="content" v-if="identityVisible">
-                                <v-layout pa-2 align-center justify-center column fill-height>
+                                <v-layout pa-2 align-center justify-center column fill-height class="services-focus-flex">
                                     <img src="@/assets/imgs/services/5.png" class="focus-img">
                                     <h1>Brand Identity</h1>
-                                    <h3 class="focus-text">A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog.</h3> 
+                                    <h3 class="focus-text">We provide spot on Brand Identity Services to our clients, from Logo and Theme Design, Web Presence, Social Media Marketing, SEO and much more.</h3> 
                                 </v-layout>
                             </div>
                             <div class="content" v-if="designVisible">
                                 <v-layout pa-2 align-center justify-center column fill-height>
                                     <img src="@/assets/imgs/services/4.png" class="focus-img">
                                     <h1>Web Design</h1>
-                                    <h3 class="focus-text">A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog.</h3> 
+                                    <h3 class="focus-text">We have developers with verstile set of expertise in web design and development. A long list of fullfilled projects show the services we provide in this regard. Check out our portfolio.</h3> 
                                 </v-layout>
                             </div>
                             <div class="content" v-if="marketingVisible">
                                 <v-layout pa-2 align-center justify-center column fill-height>
-                                    <img src="@/assets/imgs/services/3.png" class="focus-img">
+                                    <img src="@/assets/imgs/services/9.png" class="focus-img">
                                     <h1>Marketing</h1>
-                                    <h3 class="focus-text">A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog.</h3> 
+                                    <h3 class="focus-text">Marketing is the backbone of any successfull business venture, we provide a range of services in this niche as well.</h3> 
                                 </v-layout>
                             </div>
+                        </div>
+                        <div class="mobile-tablet-selector">
+                            <div class="ellipse e1" @click="changeContent('identity')" :class="{active: identityVisible}">
+                            </div>  
+                            <div class="ellipse e2" @click="changeContent('design')" :class="{active: designVisible}">
+                            </div>
+                            <div class="ellipse e3" @click="changeContent('marketing')" :class="{active: marketingVisible}">
+                            </div>
+
                         </div>
                         <div class="selector">
                             <div class="ellipse e1" @click="changeContent('identity')" :class="{active: identityVisible}">
@@ -41,7 +49,7 @@
                                 <img src="@/assets/imgs/services/4.png" class="icon" />
                             </div>
                             <div class="ellipse e3" @click="changeContent('marketing')" :class="{active: marketingVisible}">
-                                <img src="@/assets/imgs/services/3.png" class="icon" />
+                                <img src="@/assets/imgs/services/9.png" class="icon" />
                             </div>
                             <img src="@/assets/imgs/services/half-circle.png" class="selector-bg">
                         </div>
@@ -57,7 +65,7 @@
                         <div class="title">
                             <h2>Brand Identity</h2>
                             
-                            <h4>A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog.</h4>
+                            <h4>We provide spot on Brand Identity Services to our clients, from Logo and Theme Design, Web Presence, Social Media Marketing, SEO and much more.</h4>
                         </div>
                     </v-flex>
                     <v-flex xs12 md4>
@@ -74,12 +82,12 @@
                 <v-layout align-center justify-center row fill-height class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="triangle-container">
-                            <img src="@/assets/imgs/services/5.png" class="triangle-image" />
+                            <img src="@/assets/imgs/services/7.png" class="triangle-image" />
                         </div>
                     </v-flex>
                     <v-flex xs12 md4>
                         <div class="title">
-                            <h2>Brand Identity</h2>
+                            <h2>Photography</h2>
                             
                             <h4>A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog.</h4>
                         </div>
@@ -93,14 +101,14 @@
                 <v-layout align-center justify-center row fill-height class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="title">
-                            <h2>Brand Identity</h2>
+                            <h2>Web Design</h2>
                             
                             <h4>A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog.</h4>
                         </div>
                     </v-flex>
                     <v-flex xs12 md4>
                         <div class="triangle-container">
-                            <img src="@/assets/imgs/services/5.png" class="triangle-image" />
+                            <img src="@/assets/imgs/services/4.png" class="triangle-image" />
                         </div>
                     </v-flex>
                 </v-layout>
@@ -112,12 +120,12 @@
                 <v-layout align-center justify-center row fill-height class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="triangle-container">
-                            <img src="@/assets/imgs/services/5.png" class="triangle-image" />
+                            <img src="@/assets/imgs/services/9.png" class="triangle-image" />
                         </div>
                     </v-flex>
                     <v-flex xs12 md4>
                         <div class="title">
-                            <h2>Brand Identity</h2>
+                            <h2>Marketing</h2>
                             <h4>A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog.</h4>
                         </div>
                     </v-flex>
@@ -130,13 +138,13 @@
                 <v-layout align-center justify-center row fill-height class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="title">
-                            <h2>Brand Identity</h2>
+                            <h2>SEO</h2>
                             <h4>A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog. A quick brown fox jumps over the lazy sleeping dog.</h4>
                         </div>
                     </v-flex>
                     <v-flex xs12 md4>
                         <div class="triangle-container">
-                            <img src="@/assets/imgs/services/5.png" class="triangle-image" />
+                            <img src="@/assets/imgs/services/3.png" class="triangle-image" />
                         </div>
                     </v-flex>
                 </v-layout>
@@ -191,6 +199,7 @@ export default {
         margin-top: 250px !important;
     }
 }
+
 .brand-identity-section {
     padding: 0px !important;
     .service-bg {
@@ -413,14 +422,11 @@ export default {
     }
     .focus {
         margin-right: -50px;
-        position: relative;
-        img {
-            width: 550px;
-        }
         .content {
-            position: absolute;
-            top: 0px;
-            height: 100%;
+            background: url('../assets/imgs/services/full-circle.png');
+            width: 550px;
+            height: 550px;
+            background-size: 550px 550px;
             .focus-img {
                 width: 200px;
                 height: auto;
@@ -434,6 +440,68 @@ export default {
                 text-align: center;
                 width: 75%;
                 padding: 50px 0px;
+            }
+        }
+    }
+}
+
+
+
+.mobile-tablet-selector {
+    display: none;
+    .ellipse {
+        width: 25px;
+        height: 25px;
+        margin: 75px 25px 25px 25px;
+        border-radius: 100%;
+        border: 5px solid black;
+        background-color: #fff;
+        display: inline-block;
+        &:hover {
+            width: 50px;
+            height: 50px;
+        }
+        &.active {
+            width: 50px;
+            height: 50px;
+            background-color: unset;
+            border: unset;
+            background: linear-gradient(to bottom right, #140779, #370C2E);
+        }
+    }
+}
+@media (max-width: 768px) {
+    .services-overview-flex {
+        flex-direction: column !important;
+    }
+    .mobile-tablet-selector {
+        display: block;
+    }
+    .selector {
+        display: none;
+    }
+    .focus {
+        margin-right: 0px !important;
+        .content {
+            background: url('../assets/imgs/services/full-circle.png');
+            width: 350px !important;
+            height: 350px !important;
+            background-size: 350px 350px !important;
+            .focus-img {
+                margin-top: -50px;
+                width: 200px !important;
+                height: auto;
+            }
+            h1 {
+                margin-top: -30px;
+                color: #fff;
+                text-align: center;
+            }
+            .focus-text {
+                display: none;
+                color:#fff;
+                text-align: center;
+                width: 75%;
             }
         }
     }
