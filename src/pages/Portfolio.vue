@@ -3,6 +3,9 @@
         <v-layout pa-2>
             <navbar color="light"></navbar>
         </v-layout>
+        <v-layout pa-2>
+
+        </v-layout>
     </v-container>
 </template>
 <script>
