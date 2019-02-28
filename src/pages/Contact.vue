@@ -7,7 +7,7 @@
 
             <v-layout justify-center row>
                 <v-flex xs12 sm12 md4 lg4 align-self: center>
-                    <transition name="zoomDown">
+                    <transition name="bounce" enter-active-class="bounceInDown">
                         <router-link to="/"><v-img v-if="show_hero" :src="require('../assets/imgs/logo.png')" class="hero-logo pointer"></v-img></router-link>
                     </transition>
                 </v-flex>

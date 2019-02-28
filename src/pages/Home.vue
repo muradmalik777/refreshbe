@@ -11,7 +11,7 @@
           <v-img v-if="show_hero" :src="require('@/assets/imgs/logo.png')" class="hero-logo pointer"></v-img>
         </transition>
         <transition name="bounce" enter-active-class="bounceInLeft">
-          <h1 v-if="show_hero" class="c-white text-animation hero-slogan">we are a digital agency that creates business websites that are making the difference</h1>
+          <h1 v-if="show_hero" class="c-white hero-slogan">we are a digital agency that creates business websites that are making the difference</h1>
         </transition>
       </v-flex>
     </v-layout>
