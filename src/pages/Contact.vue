@@ -2,7 +2,7 @@
     <div>
         <v-container fluid class="main" grid-list-lg>
             <v-layout pa-2>
-              <navbar :showLogo="false"></navbar>
+                <navbar color="light"></navbar>
             </v-layout>
 
             <v-layout justify-center row>

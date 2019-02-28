@@ -3,7 +3,7 @@
   <!-- landing section starts -->
   <v-container v-view="heroHandler" fluid class="landing" grid-list-xl>
     <v-layout pa-2>
-      <navbar :showLogo="false"></navbar>
+      <navbar color="light"></navbar>
     </v-layout>
     <v-layout pa-2 v-bind="adjustLayout">
       <v-flex>

@@ -2,10 +2,16 @@
     <v-container fluid>
         <v-layout pa-2 justify-space-between row>
             <v-flex>
-                <router-link v-if="this.$props.showLogo" to="/" class="f-l"><v-img :src="require('@/assets/imgs/logo.png')" class="logo"></v-img></router-link>
+            <router-link to="/" class="f-l">
+                <v-img v-if="light" :src="require('@/assets/imgs/logo.png')" to="/" class="logo"></v-img>
+                <v-img v-else :src="require('@/assets/imgs/logo-dark.png')" to="/" class="logo"></v-img>
+            </router-link>
             </v-flex>
             <v-flex>
-                <v-btn flat @click.stop="drawer = !drawer" class="pointer f-r"><v-img :src="require('@/assets/imgs/burger.png')" class="menu-btn"></v-img></v-btn>
+                <v-btn flat @click.stop="drawer = !drawer" class="pointer f-r">
+                    <v-img v-if="light" :src="require('@/assets/imgs/burger.png')" class="menu-btn"></v-img>
+                    <v-img v-else :src="require('@/assets/imgs/burger-dark.png')" class="menu-btn"></v-img>
+                </v-btn>
                 <transition name="slideRight">
                     <v-navigation-drawer v-if="drawer" style="animation-duration: 0.35s" :width="325" class="bg-dark1" v-model="drawer" absolute dark right temporary>
                         <v-layout justify-start pt-2>
@@ -46,10 +52,12 @@
 <script>
 export default {
     name: 'navbar',
-    props: ['showLogo'],
+    props:['color'],
     data: function(){
         return{
             drawer: false,
+            image: "@/assets/imgs/logo.png",
+            light: true
         }
     },
     mounted: function(){
@@ -58,6 +66,13 @@ export default {
     methods: {
         hideNavigation: function(){
             this.drawer = !this.drawer
+        }
+    },
+    mounted: function(){
+        if(this.$props.color === 'light'){
+            this.light = true
+        } else{
+            this.light = false
         }
     }
 }
