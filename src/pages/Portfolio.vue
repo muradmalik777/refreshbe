@@ -141,8 +141,10 @@ export default {
                 width: fit-content;
                 margin-right: 15px;
                 float: left;
-                color: purple;
                 font-size: 14px;
+                background: linear-gradient(to right, rgb(45, 9, 247) 0%, #67083c 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         }
         .box{
@@ -151,11 +153,15 @@ export default {
                 float: left;
                 .number{
                     font-size: 60px;
-                    color: purple;
+                    background: linear-gradient(to right, rgb(45, 9, 247) 0%, #67083c 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
                 }
                 .icon{
                     font-size: 60px;
-                    color: purple;
+                    background: linear-gradient(to right, rgb(45, 9, 247) 0%, #67083c 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
                     margin: 0px !important;
                 }
             }
