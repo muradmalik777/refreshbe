@@ -13,7 +13,7 @@
         </v-layout>
 
         <v-layout pa-4 justify-center v-bind="adjustLayout" class="projects">
-            <v-flex xs6>
+            <v-flex xs4>
                 <div class="f-r content">
                     <h6 class="applications"><span>BLOCKCHAIN</span> <span>SAAS</span> <span>SMART</span> <span>CONTRACTS</span></h6>
                     <h1 class="uppercase c-medium name m-t m-b">wesbite name</h1>
@@ -36,18 +36,18 @@
                     </div>
                 </div>
             </v-flex>
-            <v-flex xs6>
-                <v-img :src="require('@/assets/imgs/sample.jpg')"></v-img>
+            <v-flex xs8>
+                <v-img :src="require('@/assets/imgs/sample3.png')"></v-img>
             </v-flex>
         </v-layout>
     </v-container>
 
     <v-container fluid>
         <v-layout pa-4 justify-center v-bind="adjustLayout" class="projects">
-            <v-flex xs6>
+            <v-flex xs8>
                 <v-img :src="require('@/assets/imgs/sample2.jpg')"></v-img>
             </v-flex>
-            <v-flex xs6>
+            <v-flex xs4>
                 <div class="f-l content">
                     <h6 class="applications"><span>BLOCKCHAIN</span> <span>SAAS</span> <span>SMART</span> <span>CONTRACTS</span></h6>
                     <h1 class="uppercase c-medium name m-t m-b">wesbite name</h1>
@@ -75,7 +75,7 @@
 
     <v-container fluid>
         <v-layout pa-4 justify-center v-bind="adjustLayout" class="projects">
-            <v-flex xs6>
+            <v-flex xs4>
                 <div class="f-r content">
                     <h6 class="applications"><span>BLOCKCHAIN</span> <span>SAAS</span> <span>SMART</span> <span>CONTRACTS</span></h6>
                     <h1 class="uppercase c-medium name m-t m-b">wesbite name</h1>
@@ -98,8 +98,8 @@
                     </div>
                 </div>
             </v-flex>
-            <v-flex xs6>
-                <v-img :src="require('@/assets/imgs/sample3.png')"></v-img>
+            <v-flex xs8>
+                <v-img :src="require('@/assets/imgs/sample.jpg')"></v-img>
             </v-flex>
         </v-layout>
     </v-container>
@@ -129,7 +129,7 @@ export default {
 .projects{
     margin: 50px 0px;
     .content{
-        width: 70%;
+        width: 90%;
         padding: 2rem 5rem;
 
         .name{

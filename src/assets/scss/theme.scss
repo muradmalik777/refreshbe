@@ -25,7 +25,7 @@ body {
 }
 
 .c-purple {
-  color: #28007C;
+  color: purple;
 }
 .c-black {
   color: #000000;
@@ -85,9 +85,7 @@ body {
 .tagline{
   font-family: "HireNinja-Bold";
   font-size: 100px;
-	background: linear-gradient(to right, rgb(14, 67, 211) 0%, #67083c 100%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  color: purple;
 }
 
 .text-animation{
