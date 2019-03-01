@@ -1,13 +1,13 @@
 <template>
     <v-container fluid>
-        <v-layout pa-2 justify-space-between row>
-            <v-flex>
+        <v-layout pa-2 justify-space-between row class="navbar">
+            <v-flex xs6>
             <router-link to="/" class="f-l">
                 <v-img v-if="light" :src="require('@/assets/imgs/logo.png')" to="/" class="logo"></v-img>
                 <v-img v-else :src="require('@/assets/imgs/logo-dark.png')" to="/" class="logo"></v-img>
             </router-link>
             </v-flex>
-            <v-flex>
+            <v-flex xs6>
                 <v-btn flat @click.stop="drawer = !drawer" class="pointer f-r">
                     <v-img v-if="light" :src="require('@/assets/imgs/burger.png')" class="menu-btn"></v-img>
                     <v-img v-else :src="require('@/assets/imgs/burger-dark.png')" class="menu-btn"></v-img>
@@ -60,9 +60,6 @@ export default {
             light: true
         }
     },
-    mounted: function(){
-
-    },
     methods: {
         hideNavigation: function(){
             this.drawer = !this.drawer
@@ -78,6 +75,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.navbar{
+    height: 120px;
+    .v-flex{
+        height: 120px;
+    }
+}
 .v-navigation-drawer{
     background-color: #141720;
 }

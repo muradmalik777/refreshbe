@@ -82,6 +82,13 @@ body {
   display: block;
   margin: 10px auto 30px;
 }
+.tagline{
+  font-family: "HireNinja-Bold";
+  font-size: 100px;
+	background: linear-gradient(to right, rgb(14, 67, 211) 0%, #67083c 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 
 .text-animation{
     position: relative;

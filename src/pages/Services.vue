@@ -2,7 +2,7 @@
     <div>
         <v-container fluid class="full-screen">
             <v-layout pa-2>
-                <!-- <navbar color="dark"></navbar> -->
+                <navbar color="dark"></navbar>
             </v-layout>
 
             <v-layout pa-2 align-center justify-center row fill-height>
