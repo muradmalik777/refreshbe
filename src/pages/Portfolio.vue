@@ -20,7 +20,6 @@
                     <div class="box">
                         <div class="left">
                             <p class="number">01</p>
-                            <v-icon class="icon">arrow_forward</v-icon>
                         </div>
                         <div class="right">
                             <p class="c-medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -54,7 +53,6 @@
                     <div class="box">
                         <div class="left">
                             <p class="number">02</p>
-                            <v-icon class="icon">arrow_back</v-icon>
                         </div>
                         <div class="right">
                             <p class="c-medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -82,7 +80,6 @@
                     <div class="box">
                         <div class="left">
                             <p class="number">03</p>
-                            <v-icon class="icon">arrow_forward</v-icon>
                         </div>
                         <div class="right">
                             <p class="c-medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -104,15 +101,19 @@
         </v-layout>
     </v-container>
 
+    <foot></foot>
+
 </div>
 </template>
 <script>
 import NavBar from '../components/NavBar';
+import Foot from '../components/Footer';
 
 export default {
     name: 'portfolio',
     components: {
         'navbar': NavBar,
+        'foot': Foot
     },
     data: function(){
         return{
@@ -157,17 +158,65 @@ export default {
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 }
-                .icon{
-                    font-size: 60px;
-                    background: linear-gradient(to right, rgb(45, 9, 247) 0%, #67083c 100%);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    margin: 0px !important;
-                }
             }
             .right{
                 width: 80%;
                 float: left;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .tagline{
+        font-size: 46px;
+    }
+    .projects{
+        margin: 50px 0px;
+        border-bottom: 3px solid #eeeeee;
+        .content{
+            width: 100%;
+            padding: 0px;
+            margin: 30px 10px;
+
+            .name{
+                width: 100%;
+                float: left;
+                font-size: 24px;
+            }
+            .applications{
+                span{
+                    width: fit-content;
+                    margin-right: 15px;
+                    float: left;
+                    font-size: 12px;
+                    background: linear-gradient(to right, rgb(45, 9, 247) 0%, #67083c 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+            .box{
+                .left{
+                    width: 15%;
+                    float: left;
+                    .number{
+                        font-size: 36px;
+                        background: linear-gradient(to right, rgb(45, 9, 247) 0%, #67083c 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                    }
+                }
+                .right{
+                    width: 80%;
+                    float: left;
+
+                    p{
+                        font-size: 14px;
+                    }
+                    .v-chip{
+                        font-size: 12px;
+                    }
+                }
             }
         }
     }

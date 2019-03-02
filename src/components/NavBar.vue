@@ -81,6 +81,16 @@ export default {
         height: 120px;
     }
 }
+.logo{
+  width: 110px;
+  height: 125px;
+}
+.hero-logo{
+  max-width: 320px;
+  height: auto;
+  display: block;
+  margin: 10px auto 30px;
+}
 .v-navigation-drawer{
     background-color: #141720;
 }
@@ -106,5 +116,44 @@ export default {
 }
 .menu-btn{
     max-width: 50px;
+}
+
+@media only screen and (max-width: 425px) {
+    .navbar{
+        height: 100px;
+        .v-flex{
+            height: 100px;
+        }
+    }
+    .logo{
+    width: 80px;
+    height: 90px;
+    }
+    .v-navigation-drawer{
+        background-color: #141720;
+    }
+    .link-box{
+        margin: 10px;
+    }
+    .v-btn{
+        font-size: 18px;
+        font-weight: 500;
+        &:hover{
+            color: rgb(221, 145, 4) !important;;
+        }
+        &:hover::before{
+            display: none;
+        }
+    }
+    .v-btn--active{
+        color: rgb(221, 145, 4) !important;
+        background-color: transparent !important;
+        &::before{
+            display: none;
+        }
+    }
+    .menu-btn{
+        max-width: 35px;
+    }
 }
 </style>
