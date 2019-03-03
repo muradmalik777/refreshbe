@@ -338,7 +338,7 @@ export default {
     max-height: 700px;
     .hero-logo{
       max-width: 200px;
-      height: 150px auto;
+      height: auto;
     }
     .hero-slogan{
       width: 90%;

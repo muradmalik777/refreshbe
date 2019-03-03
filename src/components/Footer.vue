@@ -54,5 +54,18 @@ export default {
 .light{
     background: #fafafa;
     height: fit-content;
+    height: 300px;
+}
+@media only screen and (max-width: 425px) {
+    .foot{
+        .layout{
+            .flex{
+                margin: 7px !important;
+            }
+        }
+    }
+    .light{
+        height: 100px;
+    }
 }
 </style>

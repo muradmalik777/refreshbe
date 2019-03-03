@@ -1,58 +1,65 @@
 <template>
     <div>
-        <v-container fluid class="full-screen">
+        <v-container fluid>
             <v-layout pa-2>
-                <!-- <navbar color="dark"></navbar> -->
+                <navbar color="dark"></navbar>
             </v-layout>
 
             <v-layout pa-2 align-center justify-center row fill-height>
 
                 <div class="services-overview">
                     <v-layout pa-2 align-center justify-center row fill-height class="services-overview-flex">
-                        <div class="focus">
-                            <div class="content" v-if="identityVisible">
-                                <v-layout pa-2 align-center justify-center column fill-height class="services-focus-flex">
-                                    <img src="@/assets/imgs/services/5.png" class="focus-img">
-                                    <h1>Brand Identity</h1>
-                                    <h3 class="focus-text">We provide spot on Brand Identity Services to our clients, from Logo and Theme Design, Web Presence, Social Media Marketing, SEO and much more.</h3> 
-                                </v-layout>
+                        <transition name="bounce" enter-active-class="bounceInLeft">
+                            <div class="focus" v-if="show">
+                                <div class="content" v-if="identityVisible">
+                                    <v-layout pa-2 align-center justify-center column fill-height class="services-focus-flex">
+                                        <img src="@/assets/imgs/services/5.png" class="focus-img">
+                                        <h1>Brand Identity</h1>
+                                        <h3 class="focus-text">We provide spot on Brand Identity Services to our clients, from Logo and Theme Design, Web Presence, Social Media Marketing, SEO and much more.</h3> 
+                                    </v-layout>
+                                </div>
+                                <div class="content" v-if="designVisible">
+                                    <v-layout pa-2 align-center justify-center column fill-height>
+                                        <img src="@/assets/imgs/services/4.png" class="focus-img">
+                                        <h1>Web Design</h1>
+                                        <h3 class="focus-text">We have developers with verstile set of expertise in web design and development. A long list of fullfilled projects show the services we provide in this regard. Check out our portfolio.</h3> 
+                                    </v-layout>
+                                </div>
+                                <div class="content" v-if="marketingVisible">
+                                    <v-layout pa-2 align-center justify-center column fill-height>
+                                        <img src="@/assets/imgs/services/9.png" class="focus-img">
+                                        <h1>Marketing</h1>
+                                        <h3 class="focus-text">Marketing is the backbone of any successfull business venture, we provide a range of services in this niche as well.</h3> 
+                                    </v-layout>
+                                </div>
                             </div>
-                            <div class="content" v-if="designVisible">
-                                <v-layout pa-2 align-center justify-center column fill-height>
-                                    <img src="@/assets/imgs/services/4.png" class="focus-img">
-                                    <h1>Web Design</h1>
-                                    <h3 class="focus-text">We have developers with verstile set of expertise in web design and development. A long list of fullfilled projects show the services we provide in this regard. Check out our portfolio.</h3> 
-                                </v-layout>
+                        </transition>
+                        <transition name="bounce" enter-active-class="bounceInRight">
+                            <div class="mobile-tablet-selector" v-if="show">
+                                <div class="ellipse e1" @click="changeContent('identity')" :class="{active: identityVisible}">
+                                </div>  
+                                <div class="ellipse e2" @click="changeContent('design')" :class="{active: designVisible}">
+                                </div>
+                                <div class="ellipse e3" @click="changeContent('marketing')" :class="{active: marketingVisible}">
+                                </div>
                             </div>
-                            <div class="content" v-if="marketingVisible">
-                                <v-layout pa-2 align-center justify-center column fill-height>
-                                    <img src="@/assets/imgs/services/9.png" class="focus-img">
-                                    <h1>Marketing</h1>
-                                    <h3 class="focus-text">Marketing is the backbone of any successfull business venture, we provide a range of services in this niche as well.</h3> 
-                                </v-layout>
+                        </transition>
+                        <transition name="bounce" enter-active-class="bounceInRight">
+                            <div class="selector" v-if="show">
+                                <div class="ellipse e1" @click="changeContent('identity')" :class="{active: identityVisible}">
+                                    <img src="@/assets/imgs/services/5.png" class="icon" />    
+                                </div>  
+                                <div class="ellipse e2" @click="changeContent('design')" :class="{active: designVisible}">
+                                    <img src="@/assets/imgs/services/4.png" class="icon" />
+                                </div>
+                                <div class="ellipse e3" @click="changeContent('marketing')" :class="{active: marketingVisible}">
+                                    <img src="@/assets/imgs/services/9.png" class="icon" />
+                                </div>
+                                <img src="@/assets/imgs/services/half-circle.png" class="selector-bg">
                             </div>
-                        </div>
-                        <div class="mobile-tablet-selector">
-                            <div class="ellipse e1" @click="changeContent('identity')" :class="{active: identityVisible}">
-                            </div>  
-                            <div class="ellipse e2" @click="changeContent('design')" :class="{active: designVisible}">
-                            </div>
-                            <div class="ellipse e3" @click="changeContent('marketing')" :class="{active: marketingVisible}">
-                            </div>
-
-                        </div>
-                        <div class="selector">
-                            <div class="ellipse e1" @click="changeContent('identity')" :class="{active: identityVisible}">
-                                <img src="@/assets/imgs/services/5.png" class="icon" />    
-                            </div>  
-                            <div class="ellipse e2" @click="changeContent('design')" :class="{active: designVisible}">
-                                <img src="@/assets/imgs/services/4.png" class="icon" />
-                            </div>
-                            <div class="ellipse e3" @click="changeContent('marketing')" :class="{active: marketingVisible}">
-                                <img src="@/assets/imgs/services/9.png" class="icon" />
-                            </div>
-                            <img src="@/assets/imgs/services/half-circle.png" class="selector-bg">
-                        </div>
+                        </transition>
+                        
+                        
                     </v-layout>
                 </div>
             </v-layout>
@@ -60,15 +67,15 @@
 
         <v-container fluid class="brand-identity-section">
             <div class="service-bg first-section">
-                <v-layout align-center justify-center row fill-height class="layout-zero-padding">
-                    <v-flex xs12 md4>
+                <v-layout align-center justify-center v-bind="adjustLayout" class="layout-zero-padding">
+                    <v-flex xs4>
                         <div class="title">
                             <h2>Brand Identity</h2>
                             
                             <h4>We provide spot on Brand Identity Services to our clients, from Logo and Theme Design, Web Presence, Social Media Marketing, SEO and much more.</h4>
                         </div>
                     </v-flex>
-                    <v-flex xs12 md4>
+                    <v-flex xs4>
                         <div class="triangle-container">
                             <img src="@/assets/imgs/services/5.png" class="triangle-image" />
                         </div>
@@ -79,7 +86,7 @@
 
         <v-container fluid class="photography-section">
             <div class="service-bg">
-                <v-layout align-center justify-center row fill-height class="layout-zero-padding">
+                <v-layout align-center justify-center v-bind="adjustLayout" class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="triangle-container">
                             <img src="@/assets/imgs/services/7.png" class="triangle-image" />
@@ -98,7 +105,7 @@
 
         <v-container fluid class="brand-identity-section">
             <div class="service-bg">
-                <v-layout align-center justify-center row fill-height class="layout-zero-padding">
+                <v-layout align-center justify-center v-bind="adjustLayout" class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="title">
                             <h2>Web Design</h2>
@@ -117,7 +124,7 @@
 
         <v-container fluid class="photography-section">
             <div class="service-bg">
-                <v-layout align-center justify-center row fill-height class="layout-zero-padding">
+                <v-layout align-center justify-center v-bind="adjustLayout" class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="triangle-container">
                             <img src="@/assets/imgs/services/9.png" class="triangle-image" />
@@ -135,7 +142,7 @@
 
         <v-container fluid class="last-section brand-identity-section">
             <div class="service-bg">
-                <v-layout align-center justify-center row fill-height class="layout-zero-padding">
+                <v-layout align-center justify-center v-bind="adjustLayout" class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="title">
                             <h2>SEO</h2>
@@ -151,30 +158,29 @@
             </div>
         </v-container>
 
-        <v-container fluid class="foot">
-            <v-layout pa-3 align-end justify-center row>
-                    <img src="../assets/imgs/contact/fb-grad.png" class="footer-icon">
-                    <img src="../assets/imgs/contact/in-grad.png" class="footer-icon">
-                    <img src="../assets/imgs/contact/twitter-grad.png" class="footer-icon">
-            </v-layout>
-        </v-container>
-
+        <foot></foot>
     </div>
 </template>
 <script>
 import NavBar from '../components/NavBar';
+import Foot from '../components/Footer'
 
 export default {
     name: 'services',
     components: {
         'navbar': NavBar,
+        'foot': Foot
     },
     data: function () {
         return {
              identityVisible: true,
              designVisible: false,
              marketingVisible: false,
+             show: false
         }
+    },
+    mounted: function(){
+        this.show = true
     },
     methods: {
         changeContent: function (section) {
@@ -203,11 +209,9 @@ export default {
 .brand-identity-section {
     padding: 0px !important;
     .service-bg {
-        margin-top: 50px;
         background: linear-gradient(to bottom right, #140779, #370C2E);
         transform: rotate(-5deg);
         width: 110vw;
-        height: 500px;
         margin-left: -50px;
         .layout-zero-padding {
             transform: rotate(5deg);
@@ -254,8 +258,7 @@ export default {
 .photography-section {
     padding: 0px !important;
     .service-bg {
-        width: 100vw;
-        height: 500px;
+        width: 100%;
         .layout-zero-padding {
             .title {
                 padding: 25px;
@@ -470,7 +473,8 @@ export default {
         }
     }
 }
-@media (max-width: 768px) {
+@media only screen and (max-width: 425px) {
+    //top section
     .services-overview-flex {
         flex-direction: column !important;
     }
@@ -505,14 +509,101 @@ export default {
             }
         }
     }
-}
 
-.foot {
-    padding-top: 100px;
-    .footer-icon {
-        width: 50px;
-        height: 50px;
-        margin: 15px;
+    //other sections
+    .brand-identity-section {
+        .first-section {
+            margin-top: 50px !important;
+        }
+    }
+    .brand-identity-section {
+        padding: 0px !important;
+        .service-bg {
+            transform: rotate(0deg);
+            .layout-zero-padding {
+                transform: rotate(0deg);
+                .title {
+                    padding: 10px;
+                    margin: 60px;
+                    h2, h4 {
+                        color: #fff;
+                    }
+                    h2{
+                        width: 95%;
+                        position: relative;
+                        margin-bottom: 40px;
+                        font-size: 24px;
+                        &::before{
+                            top: 35px;
+                        }
+                    }
+                    h4{
+                        width: 95%;
+                        font-size: 18px;
+                    }
+                }
+                .triangle-container {
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 250px;
+                    height: 400px;
+                    display: block;
+                    margin: 0px auto 50px;
+                    .triangle-image {
+                        width: 140px;
+                        height: 140px;
+                        position: relative;
+                        top: 140px;
+                        left: -10px;
+                    }
+                }
+            }
+        }
+    }
+
+    .photography-section {
+        padding: 0px !important;
+        .service-bg {
+            transform: rotate(0deg);
+            .layout-zero-padding {
+                transform: rotate(0deg);
+                .title {
+                    padding: 10px;
+                    margin: 60px;
+                    h2, h4 {
+                        color: #000000;
+                    }
+                    h2{
+                        width: 95%;
+                        position: relative;
+                        margin-bottom: 40px;
+                        font-size: 24px;
+                        &::before{
+                            top: 35px;
+                        }
+                    }
+                    h4{
+                        width: 95%;
+                        font-size: 18px;
+                    }
+                }
+                .triangle-container {
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 250px;
+                    height: 400px;
+                    display: block;
+                    margin: 50px auto 0px;
+                    .triangle-image {
+                        width: 140px;
+                        height: 140px;
+                        position: relative;
+                        top: 140px;
+                        left: -80px;
+                    }
+                }
+            }
+        }
     }
 }
 </style>
