@@ -13,91 +13,106 @@
         </v-layout>
 
         <v-layout pa-4 justify-center v-bind="adjustLayout" class="projects">
-            <v-flex xs4>
-                <div class="f-r content">
-                    <h6 class="applications"><span>BLOCKCHAIN</span> <span>SAAS</span> <span>SMART</span> <span>CONTRACTS</span></h6>
-                    <h1 class="uppercase c-medium name m-t m-b">wesbite name</h1>
-                    <div class="box">
-                        <div class="left">
-                            <p class="number">01</p>
-                        </div>
-                        <div class="right">
-                            <p class="c-medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            </p>
-                            <h4 class="c-medium uppercase m-b">technologies</h4>
-                            <v-chip>VueJs</v-chip>
-                            <v-chip>Laravel</v-chip>
-                            <v-chip>Lumen</v-chip>
-                            <v-chip>Php</v-chip>
+            <transition name="bounce" enter-active-class="bounceInLeft">
+                <v-flex xs4 v-if="hero">
+                    <div class="f-r content">
+                        <h6 class="applications"><span>BLOCKCHAIN</span> <span>SAAS</span> <span>SMART</span> <span>CONTRACTS</span></h6>
+                        <h1 class="uppercase c-medium name m-t m-b">wesbite name</h1>
+                        <div class="box">
+                            <div class="left">
+                                <p class="number">01</p>
+                            </div>
+                            <div class="right">
+                                <p class="c-medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                </p>
+                                <h4 class="c-medium uppercase m-b">technologies</h4>
+                                <v-chip>VueJs</v-chip>
+                                <v-chip>Laravel</v-chip>
+                                <v-chip>Lumen</v-chip>
+                                <v-chip>Php</v-chip>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </v-flex>
-            <v-flex xs8>
-                <v-img :src="require('@/assets/imgs/sample3.png')"></v-img>
-            </v-flex>
+                </v-flex>
+            </transition>
+            <transition name="bounce" enter-active-class="bounceInRight">
+                <v-flex xs8 v-if="hero">
+                    <v-img :src="require('@/assets/imgs/sample3.png')"></v-img>
+                </v-flex>
+            </transition>
+            
         </v-layout>
     </v-container>
 
     <v-container fluid>
         <v-layout pa-4 justify-center v-bind="adjustLayout" class="projects">
-            <v-flex xs8>
-                <v-img :src="require('@/assets/imgs/sample2.jpg')"></v-img>
-            </v-flex>
-            <v-flex xs4>
-                <div class="f-l content">
-                    <h6 class="applications"><span>BLOCKCHAIN</span> <span>SAAS</span> <span>SMART</span> <span>CONTRACTS</span></h6>
-                    <h1 class="uppercase c-medium name m-t m-b">wesbite name</h1>
-                    <div class="box">
-                        <div class="left">
-                            <p class="number">02</p>
-                        </div>
-                        <div class="right">
-                            <p class="c-medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            </p>
-                            <h4 class="c-medium uppercase m-b">technologies</h4>
-                            <v-chip>VueJs</v-chip>
-                            <v-chip>Laravel</v-chip>
-                            <v-chip>Lumen</v-chip>
-                            <v-chip>Php</v-chip>
+            <transition name="bounce" enter-active-class="bounceInLeft">
+               <v-flex v-if="first" xs8>
+                    <v-img :src="require('@/assets/imgs/sample2.jpg')"></v-img>
+                </v-flex>
+            </transition>
+            <transition name="bounce" enter-active-class="bounceInRight">
+                <v-flex v-if="first" xs4>
+                    <div class="f-l content">
+                        <h6 class="applications"><span>BLOCKCHAIN</span> <span>SAAS</span> <span>SMART</span> <span>CONTRACTS</span></h6>
+                        <h1 class="uppercase c-medium name m-t m-b">wesbite name</h1>
+                        <div class="box">
+                            <div class="left">
+                                <p class="number">02</p>
+                            </div>
+                            <div class="right">
+                                <p class="c-medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                </p>
+                                <h4 class="c-medium uppercase m-b">technologies</h4>
+                                <v-chip>VueJs</v-chip>
+                                <v-chip>Laravel</v-chip>
+                                <v-chip>Lumen</v-chip>
+                                <v-chip>Php</v-chip>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </v-flex>
+                </v-flex>
+            </transition>
         </v-layout>
     </v-container>
 
     <v-container fluid>
         <v-layout pa-4 justify-center v-bind="adjustLayout" class="projects">
-            <v-flex xs4>
-                <div class="f-r content">
-                    <h6 class="applications"><span>BLOCKCHAIN</span> <span>SAAS</span> <span>SMART</span> <span>CONTRACTS</span></h6>
-                    <h1 class="uppercase c-medium name m-t m-b">wesbite name</h1>
-                    <div class="box">
-                        <div class="left">
-                            <p class="number">03</p>
-                        </div>
-                        <div class="right">
-                            <p class="c-medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                            </p>
-                            <h4 class="c-medium uppercase m-b">technologies</h4>
-                            <v-chip>VueJs</v-chip>
-                            <v-chip>Laravel</v-chip>
-                            <v-chip>Lumen</v-chip>
-                            <v-chip>Php</v-chip>
+            <transition name="bounce" enter-active-class="bounceInLeft">
+                <v-flex v-if="second" xs4>
+                    <div class="f-r content">
+                        <h6 class="applications"><span>BLOCKCHAIN</span> <span>SAAS</span> <span>SMART</span> <span>CONTRACTS</span></h6>
+                        <h1 class="uppercase c-medium name m-t m-b">wesbite name</h1>
+                        <div class="box">
+                            <div class="left">
+                                <p class="number">03</p>
+                            </div>
+                            <div class="right">
+                                <p class="c-medium">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                                    when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                                </p>
+                                <h4 class="c-medium uppercase m-b">technologies</h4>
+                                <v-chip>VueJs</v-chip>
+                                <v-chip>Laravel</v-chip>
+                                <v-chip>Lumen</v-chip>
+                                <v-chip>Php</v-chip>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </v-flex>
-            <v-flex xs8>
-                <v-img :src="require('@/assets/imgs/sample.jpg')"></v-img>
-            </v-flex>
+                </v-flex>
+            </transition>
+            <transition name="bounce" enter-active-class="bounceInRight">
+                <v-flex v-if="second" xs8>
+                    <v-img :src="require('@/assets/imgs/sample.jpg')"></v-img>
+                </v-flex>
+            </transition>
+            
+            
         </v-layout>
     </v-container>
 
@@ -118,12 +133,18 @@ export default {
     data: function(){
         return{
             hero: false,
+            first: false,
+            second: false
         }
     },
     mounted: function(){
         this.hero = true
+        this.first = true
+        this.second = true
+    },
+    methods: {
+        
     }
-    
 }
 </script>
 <style lang="scss" scoped>
@@ -173,7 +194,6 @@ export default {
     }
     .projects{
         margin: 50px 0px;
-        border-bottom: 3px solid #eeeeee;
         .content{
             width: 100%;
             padding: 0px;

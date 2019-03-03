@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-container fluid class="full-screen">
+        <v-container fluid>
             <v-layout pa-2>
                 <navbar color="dark"></navbar>
             </v-layout>
@@ -60,7 +60,7 @@
 
         <v-container fluid class="brand-identity-section">
             <div class="service-bg first-section">
-                <v-layout align-center justify-center row fill-height class="layout-zero-padding">
+                <v-layout align-center justify-center v-bind="adjustLayout" class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="title">
                             <h2>Brand Identity</h2>
@@ -79,7 +79,7 @@
 
         <v-container fluid class="photography-section">
             <div class="service-bg">
-                <v-layout align-center justify-center row fill-height class="layout-zero-padding">
+                <v-layout align-center justify-center v-bind="adjustLayout" class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="triangle-container">
                             <img src="@/assets/imgs/services/7.png" class="triangle-image" />
@@ -98,7 +98,7 @@
 
         <v-container fluid class="brand-identity-section">
             <div class="service-bg">
-                <v-layout align-center justify-center row fill-height class="layout-zero-padding">
+                <v-layout align-center justify-center v-bind="adjustLayout" class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="title">
                             <h2>Web Design</h2>
@@ -117,7 +117,7 @@
 
         <v-container fluid class="photography-section">
             <div class="service-bg">
-                <v-layout align-center justify-center row fill-height class="layout-zero-padding">
+                <v-layout align-center justify-center v-bind="adjustLayout" class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="triangle-container">
                             <img src="@/assets/imgs/services/9.png" class="triangle-image" />
@@ -135,7 +135,7 @@
 
         <v-container fluid class="last-section brand-identity-section">
             <div class="service-bg">
-                <v-layout align-center justify-center row fill-height class="layout-zero-padding">
+                <v-layout align-center justify-center v-bind="adjustLayout" class="layout-zero-padding">
                     <v-flex xs12 md4>
                         <div class="title">
                             <h2>SEO</h2>
@@ -151,23 +151,18 @@
             </div>
         </v-container>
 
-        <v-container fluid class="foot">
-            <v-layout pa-3 align-end justify-center row>
-                    <img src="../assets/imgs/contact/fb-grad.png" class="footer-icon">
-                    <img src="../assets/imgs/contact/in-grad.png" class="footer-icon">
-                    <img src="../assets/imgs/contact/twitter-grad.png" class="footer-icon">
-            </v-layout>
-        </v-container>
-
+        <foot></foot>
     </div>
 </template>
 <script>
 import NavBar from '../components/NavBar';
+import Foot from '../components/Footer'
 
 export default {
     name: 'services',
     components: {
         'navbar': NavBar,
+        'foot': Foot
     },
     data: function () {
         return {
@@ -203,11 +198,9 @@ export default {
 .brand-identity-section {
     padding: 0px !important;
     .service-bg {
-        margin-top: 50px;
         background: linear-gradient(to bottom right, #140779, #370C2E);
         transform: rotate(-5deg);
         width: 110vw;
-        height: 500px;
         margin-left: -50px;
         .layout-zero-padding {
             transform: rotate(5deg);
@@ -254,8 +247,7 @@ export default {
 .photography-section {
     padding: 0px !important;
     .service-bg {
-        width: 100vw;
-        height: 500px;
+        width: 100%;
         .layout-zero-padding {
             .title {
                 padding: 25px;
@@ -470,7 +462,8 @@ export default {
         }
     }
 }
-@media (max-width: 768px) {
+@media only screen and (max-width: 425px) {
+    //top section
     .services-overview-flex {
         flex-direction: column !important;
     }
@@ -505,14 +498,32 @@ export default {
             }
         }
     }
-}
 
-.foot {
-    padding-top: 100px;
-    .footer-icon {
-        width: 50px;
-        height: 50px;
-        margin: 15px;
+    //other sections
+    .brand-identity-section {
+        .first-section {
+            margin-top: 50px !important;
+        }
+    }
+
+    .service-bg{
+        transform: rotate(0deg) !important;
+    }
+    .layout-zero-padding{
+        transform: rotate(0deg) !important;
+    }
+    .triangle-container {
+        background: url('../assets/imgs/services/triangles-white.png');
+        background-repeat: no-repeat;
+        height: 450px;
+        width: 250px;
+        position: relative;
+        background-size: 300px auto;
+        .triangle-image {
+            position: relative;
+            top: 220px;
+            left: -30px;
+        }
     }
 }
 </style>
