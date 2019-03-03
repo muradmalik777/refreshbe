@@ -9,50 +9,57 @@
 
                 <div class="services-overview">
                     <v-layout pa-2 align-center justify-center row fill-height class="services-overview-flex">
-                        <div class="focus">
-                            <div class="content" v-if="identityVisible">
-                                <v-layout pa-2 align-center justify-center column fill-height class="services-focus-flex">
-                                    <img src="@/assets/imgs/services/5.png" class="focus-img">
-                                    <h1>Brand Identity</h1>
-                                    <h3 class="focus-text">We provide spot on Brand Identity Services to our clients, from Logo and Theme Design, Web Presence, Social Media Marketing, SEO and much more.</h3> 
-                                </v-layout>
+                        <transition name="bounce" enter-active-class="bounceInLeft">
+                            <div class="focus" v-if="show">
+                                <div class="content" v-if="identityVisible">
+                                    <v-layout pa-2 align-center justify-center column fill-height class="services-focus-flex">
+                                        <img src="@/assets/imgs/services/5.png" class="focus-img">
+                                        <h1>Brand Identity</h1>
+                                        <h3 class="focus-text">We provide spot on Brand Identity Services to our clients, from Logo and Theme Design, Web Presence, Social Media Marketing, SEO and much more.</h3> 
+                                    </v-layout>
+                                </div>
+                                <div class="content" v-if="designVisible">
+                                    <v-layout pa-2 align-center justify-center column fill-height>
+                                        <img src="@/assets/imgs/services/4.png" class="focus-img">
+                                        <h1>Web Design</h1>
+                                        <h3 class="focus-text">We have developers with verstile set of expertise in web design and development. A long list of fullfilled projects show the services we provide in this regard. Check out our portfolio.</h3> 
+                                    </v-layout>
+                                </div>
+                                <div class="content" v-if="marketingVisible">
+                                    <v-layout pa-2 align-center justify-center column fill-height>
+                                        <img src="@/assets/imgs/services/9.png" class="focus-img">
+                                        <h1>Marketing</h1>
+                                        <h3 class="focus-text">Marketing is the backbone of any successfull business venture, we provide a range of services in this niche as well.</h3> 
+                                    </v-layout>
+                                </div>
                             </div>
-                            <div class="content" v-if="designVisible">
-                                <v-layout pa-2 align-center justify-center column fill-height>
-                                    <img src="@/assets/imgs/services/4.png" class="focus-img">
-                                    <h1>Web Design</h1>
-                                    <h3 class="focus-text">We have developers with verstile set of expertise in web design and development. A long list of fullfilled projects show the services we provide in this regard. Check out our portfolio.</h3> 
-                                </v-layout>
+                        </transition>
+                        <transition name="bounce" enter-active-class="bounceInRight">
+                            <div class="mobile-tablet-selector" v-if="show">
+                                <div class="ellipse e1" @click="changeContent('identity')" :class="{active: identityVisible}">
+                                </div>  
+                                <div class="ellipse e2" @click="changeContent('design')" :class="{active: designVisible}">
+                                </div>
+                                <div class="ellipse e3" @click="changeContent('marketing')" :class="{active: marketingVisible}">
+                                </div>
                             </div>
-                            <div class="content" v-if="marketingVisible">
-                                <v-layout pa-2 align-center justify-center column fill-height>
-                                    <img src="@/assets/imgs/services/9.png" class="focus-img">
-                                    <h1>Marketing</h1>
-                                    <h3 class="focus-text">Marketing is the backbone of any successfull business venture, we provide a range of services in this niche as well.</h3> 
-                                </v-layout>
+                        </transition>
+                        <transition name="bounce" enter-active-class="bounceInRight">
+                            <div class="selector" v-if="show">
+                                <div class="ellipse e1" @click="changeContent('identity')" :class="{active: identityVisible}">
+                                    <img src="@/assets/imgs/services/5.png" class="icon" />    
+                                </div>  
+                                <div class="ellipse e2" @click="changeContent('design')" :class="{active: designVisible}">
+                                    <img src="@/assets/imgs/services/4.png" class="icon" />
+                                </div>
+                                <div class="ellipse e3" @click="changeContent('marketing')" :class="{active: marketingVisible}">
+                                    <img src="@/assets/imgs/services/9.png" class="icon" />
+                                </div>
+                                <img src="@/assets/imgs/services/half-circle.png" class="selector-bg">
                             </div>
-                        </div>
-                        <div class="mobile-tablet-selector">
-                            <div class="ellipse e1" @click="changeContent('identity')" :class="{active: identityVisible}">
-                            </div>  
-                            <div class="ellipse e2" @click="changeContent('design')" :class="{active: designVisible}">
-                            </div>
-                            <div class="ellipse e3" @click="changeContent('marketing')" :class="{active: marketingVisible}">
-                            </div>
-
-                        </div>
-                        <div class="selector">
-                            <div class="ellipse e1" @click="changeContent('identity')" :class="{active: identityVisible}">
-                                <img src="@/assets/imgs/services/5.png" class="icon" />    
-                            </div>  
-                            <div class="ellipse e2" @click="changeContent('design')" :class="{active: designVisible}">
-                                <img src="@/assets/imgs/services/4.png" class="icon" />
-                            </div>
-                            <div class="ellipse e3" @click="changeContent('marketing')" :class="{active: marketingVisible}">
-                                <img src="@/assets/imgs/services/9.png" class="icon" />
-                            </div>
-                            <img src="@/assets/imgs/services/half-circle.png" class="selector-bg">
-                        </div>
+                        </transition>
+                        
+                        
                     </v-layout>
                 </div>
             </v-layout>
@@ -169,7 +176,11 @@ export default {
              identityVisible: true,
              designVisible: false,
              marketingVisible: false,
+             show: false
         }
+    },
+    mounted: function(){
+        this.show = true
     },
     methods: {
         changeContent: function (section) {

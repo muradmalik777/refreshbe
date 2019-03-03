@@ -64,5 +64,8 @@ export default {
             }
         }
     }
+    .light{
+        height: 100px;
+    }
 }
 </style>
