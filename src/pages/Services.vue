@@ -68,14 +68,14 @@
         <v-container fluid class="brand-identity-section">
             <div class="service-bg first-section">
                 <v-layout align-center justify-center v-bind="adjustLayout" class="layout-zero-padding">
-                    <v-flex xs12 md4>
+                    <v-flex xs4>
                         <div class="title">
                             <h2>Brand Identity</h2>
                             
                             <h4>We provide spot on Brand Identity Services to our clients, from Logo and Theme Design, Web Presence, Social Media Marketing, SEO and much more.</h4>
                         </div>
                     </v-flex>
-                    <v-flex xs12 md4>
+                    <v-flex xs4>
                         <div class="triangle-container">
                             <img src="@/assets/imgs/services/5.png" class="triangle-image" />
                         </div>
@@ -516,24 +516,93 @@ export default {
             margin-top: 50px !important;
         }
     }
+    .brand-identity-section {
+        padding: 0px !important;
+        .service-bg {
+            transform: rotate(0deg);
+            .layout-zero-padding {
+                transform: rotate(0deg);
+                .title {
+                    padding: 10px;
+                    margin: 60px;
+                    h2, h4 {
+                        color: #fff;
+                    }
+                    h2{
+                        width: 95%;
+                        position: relative;
+                        margin-bottom: 40px;
+                        font-size: 24px;
+                        &::before{
+                            top: 35px;
+                        }
+                    }
+                    h4{
+                        width: 95%;
+                        font-size: 18px;
+                    }
+                }
+                .triangle-container {
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 250px;
+                    height: 400px;
+                    display: block;
+                    margin: 0px auto 50px;
+                    .triangle-image {
+                        width: 140px;
+                        height: 140px;
+                        position: relative;
+                        top: 140px;
+                        left: -10px;
+                    }
+                }
+            }
+        }
+    }
 
-    .service-bg{
-        transform: rotate(0deg) !important;
-    }
-    .layout-zero-padding{
-        transform: rotate(0deg) !important;
-    }
-    .triangle-container {
-        background: url('../assets/imgs/services/triangles-white.png');
-        background-repeat: no-repeat;
-        height: 450px;
-        width: 250px;
-        position: relative;
-        background-size: 300px auto;
-        .triangle-image {
-            position: relative;
-            top: 220px;
-            left: -30px;
+    .photography-section {
+        padding: 0px !important;
+        .service-bg {
+            transform: rotate(0deg);
+            .layout-zero-padding {
+                transform: rotate(0deg);
+                .title {
+                    padding: 10px;
+                    margin: 60px;
+                    h2, h4 {
+                        color: #000000;
+                    }
+                    h2{
+                        width: 95%;
+                        position: relative;
+                        margin-bottom: 40px;
+                        font-size: 24px;
+                        &::before{
+                            top: 35px;
+                        }
+                    }
+                    h4{
+                        width: 95%;
+                        font-size: 18px;
+                    }
+                }
+                .triangle-container {
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    width: 250px;
+                    height: 400px;
+                    display: block;
+                    margin: 50px auto 0px;
+                    .triangle-image {
+                        width: 140px;
+                        height: 140px;
+                        position: relative;
+                        top: 140px;
+                        left: -80px;
+                    }
+                }
+            }
         }
     }
 }
