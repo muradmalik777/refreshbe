@@ -1,6 +1,6 @@
 <template>
 <div>
-    <v-container fluid>
+    <v-container v-view="heroHandler" fluid>
         <v-layout pa-2>
             <navbar color="dark"></navbar>
         </v-layout>
@@ -46,7 +46,7 @@
         </v-layout>
     </v-container>
 
-    <v-container fluid>
+    <v-container v-view="firstHandler" fluid>
         <v-layout pa-4 justify-center v-bind="adjustLayout" class="projects">
             <transition name="bounce" enter-active-class="bounceInLeft">
                <v-flex v-if="first" xs8>
@@ -80,7 +80,7 @@
         </v-layout>
     </v-container>
 
-    <v-container fluid>
+    <v-container v-view="secondHandler" fluid>
         <v-layout pa-4 justify-center v-bind="adjustLayout" class="projects">
             <transition name="bounce" enter-active-class="bounceInLeft">
                 <v-flex v-if="second" xs4>
@@ -139,17 +139,69 @@ export default {
     },
     mounted: function(){
         this.hero = true
-        this.first = true
-        this.second = true
     },
     methods: {
-        
+        heroHandler: function(event){
+            if(event.type === 'enter' && event.percentInView >= 0.3){
+                this.hero = true
+            } else if(event.type === 'exit' && event.percentTop > 0.4){
+                this.hero = true
+            } else {
+                if(event.percentInView > 0.48){
+                this.hero = true
+                }
+                else{
+                this.hero = false
+                }
+            }
+        },
+        firstHandler: function(event){
+            if (event.type === 'enter') {
+                if (event.percentInView > 0.3) {
+                    this.first = true
+                } else {
+                    this.first = false
+                }
+            } else if (event.type === 'exit') {
+                if (event.percentInView < 0.3) {
+                    this.first = false
+                } else {
+                    this.first = true
+                }
+            } else {
+                if (event.percentInView > 0.3) {
+                    this.first = true
+                } else {
+                    this.first = false
+                }
+            }
+        },
+        secondHandler: function (event) {
+            if (event.type === 'enter') {
+                if (event.percentInView > 0.3) {
+                    this.second = true
+                }
+            } else if (event.type === 'exit') {
+                if (event.percentTop < 0.3) {
+                    this.second = false
+                } else {
+                    this.second = true
+                }
+            } else {
+                if (event.percentInView > 0.3) {
+                    this.second = true
+                } else {
+                    this.second = false
+                }
+            }
+        },
     }
 }
 </script>
 <style lang="scss" scoped>
 .projects{
     margin: 50px 0px;
+    height: 90vh;
     .content{
         width: 90%;
         padding: 2rem 5rem;

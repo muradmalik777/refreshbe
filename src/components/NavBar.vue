@@ -60,6 +60,9 @@ export default {
             light: true
         }
     },
+    created: function(){
+      window.scrollTo(0,0); 
+    },
     methods: {
         hideNavigation: function(){
             this.drawer = !this.drawer
@@ -95,11 +98,12 @@ export default {
     background-color: #141720;
 }
 .link-box{
-    margin: 10px;
+    margin: 0px;
 }
 .v-btn{
     font-size: 18px;
     font-weight: 500;
+    margin: 0px;
     &:hover{
         color: rgb(221, 145, 4) !important;;
     }
@@ -126,18 +130,21 @@ export default {
         }
     }
     .logo{
-    width: 80px;
-    height: 90px;
+        width: 80px;
+        height: 90px;
     }
     .v-navigation-drawer{
         background-color: #141720;
     }
-    .link-box{
-        margin: 10px;
+    .icon{
+        margin: 40px auto;
+        width: 110px;
+        height: 150px;
     }
     .v-btn{
         font-size: 18px;
         font-weight: 500;
+        margin: 0px;
         &:hover{
             color: rgb(221, 145, 4) !important;;
         }
